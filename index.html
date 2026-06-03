@@ -3,1006 +3,933 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEXORA — Premium Digital Agency</title>
+<meta name="description" content="NEXORA — Premium Digital Agency. Web Development, AI Solutions, E-Commerce. Professional websites starting at $29.">
+<meta name="keywords" content="web development, AI solutions, e-commerce, digital agency, website design">
+<meta name="author" content="NEXORA">
+<meta property="og:title" content="NEXORA — Premium Digital Agency">
+<meta property="og:description" content="Premium websites starting at $29. Web Development, AI Solutions, E-Commerce.">
+<meta property="og:image" content="https://i.imgur.com/XRLsmbg.jpeg">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/jpeg" href="https://i.imgur.com/XRLsmbg.jpeg">
+<title>NEXORA — Premium Digital Agency | Web Development · AI Solutions · E-Commerce</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 
 :root{
---bg-primary:#050507;--bg-secondary:#0a0a0f;--bg-card:rgba(255,255,255,0.03);--bg-card-hover:rgba(255,255,255,0.06);
---text-primary:#f5f5f7;--text-secondary:rgba(245,245,247,0.6);--text-tertiary:rgba(245,245,247,0.4);
---accent:#6366f1;--accent-light:#818cf8;--accent-glow:rgba(99,102,241,0.15);--accent2:#8b5cf6;--accent3:#06b6d4;
---border:rgba(255,255,255,0.06);--border-hover:rgba(255,255,255,0.12);
---radius-lg:16px;--radius-xl:24px;--radius-2xl:32px
+  --bg:#050507;
+  --bg2:#0a0a0f;
+  --card:rgba(255,255,255,0.03);
+  --card2:rgba(255,255,255,0.06);
+  --t1:#f5f5f7;
+  --t2:rgba(245,245,247,0.6);
+  --t3:rgba(245,245,247,0.4);
+  --ac:#6366f1;
+  --ac2:#818cf8;
+  --acg:rgba(99,102,241,0.15);
+  --ac3:#8b5cf6;
+  --ac4:#06b6d4;
+  --bd:rgba(255,255,255,0.06);
+  --bd2:rgba(255,255,255,0.12);
 }
 
-html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--accent) var(--bg-primary)}
-body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg-primary);color:var(--text-primary);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
-::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg-primary)}::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
+html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--ac) var(--bg)}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--t1);overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;line-height:1.6}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--ac);border-radius:3px}
 
-.cursor-follower{position:fixed;width:24px;height:24px;border:1.5px solid var(--accent-light);border-radius:50%;pointer-events:none;z-index:99998;transition:transform .15s ease,width .3s ease,height .3s ease;transform:translate(-50%,-50%);mix-blend-mode:difference}
-.cursor-dot{position:fixed;width:5px;height:5px;background:var(--accent-light);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%)}
+/* CURSOR */
+.cur{position:fixed;width:24px;height:24px;border:1.5px solid var(--ac2);border-radius:50%;pointer-events:none;z-index:99998;transition:width .3s,height .3s;transform:translate(-50%,-50%);mix-blend-mode:difference}
+.dot{position:fixed;width:5px;height:5px;background:var(--ac2);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%)}
 
-.loader-screen{position:fixed;inset:0;background:var(--bg-primary);z-index:100000;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity .6s ease,visibility .6s ease}
-.loader-screen.hidden{opacity:0;visibility:hidden}
-.loader-logo-img{width:80px;height:80px;object-fit:contain;border-radius:16px;animation:logoReveal 1s ease forwards}
-.loader-bar-container{width:200px;height:2px;background:var(--border);border-radius:2px;margin-top:28px;overflow:hidden}
-.loader-bar{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:2px;animation:loadBar 2s ease forwards}
-@keyframes logoReveal{0%{opacity:0;transform:translateY(10px) scale(.9)}100%{opacity:1;transform:translateY(0) scale(1)}}
-@keyframes loadBar{0%{width:0}100%{width:100%}}
+/* LOADER */
+.loader{position:fixed;inset:0;background:var(--bg);z-index:100000;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity .8s,visibility .8s}
+.loader.done{opacity:0;visibility:hidden;pointer-events:none}
+.loader img{width:80px;height:80px;object-fit:contain;border-radius:16px;animation:lReveal 1s ease forwards}
+.loader-bar-wrap{width:200px;height:2px;background:var(--bd);border-radius:2px;margin-top:28px;overflow:hidden}
+.loader-bar{height:100%;background:linear-gradient(90deg,var(--ac),var(--ac3));border-radius:2px;animation:lBar 2s ease forwards}
+@keyframes lReveal{0%{opacity:0;transform:translateY(10px) scale(.9)}100%{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes lBar{0%{width:0}100%{width:100%}}
 
-.bg-grid{position:fixed;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);background-size:80px 80px}
-.bg-gradient-orb{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0;animation:orbFloat 15s ease-in-out infinite}
-.orb-1{width:600px;height:600px;background:radial-gradient(circle,rgba(99,102,241,.12),transparent 70%);top:-200px;left:-200px}
-.orb-2{width:500px;height:500px;background:radial-gradient(circle,rgba(139,92,246,.08),transparent 70%);top:50%;right:-200px;animation-delay:-5s}
-.orb-3{width:400px;height:400px;background:radial-gradient(circle,rgba(6,182,212,.06),transparent 70%);bottom:-100px;left:30%;animation-delay:-10s}
-@keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.05)}66%{transform:translate(-20px,20px) scale(.95)}}
+/* BG */
+.bgGrid{position:fixed;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);background-size:80px 80px}
+.orb{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0;animation:orbF 15s ease-in-out infinite}
+.o1{width:600px;height:600px;background:radial-gradient(circle,rgba(99,102,241,.12),transparent 70%);top:-200px;left:-200px}
+.o2{width:500px;height:500px;background:radial-gradient(circle,rgba(139,92,246,.08),transparent 70%);top:50%;right:-200px;animation-delay:-5s}
+.o3{width:400px;height:400px;background:radial-gradient(circle,rgba(6,182,212,.06),transparent 70%);bottom:-100px;left:30%;animation-delay:-10s}
+@keyframes orbF{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.05)}66%{transform:translate(-20px,20px) scale(.95)}}
+.parts{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.pt{position:absolute;width:2px;height:2px;background:var(--ac2);border-radius:50%;opacity:0;animation:ptF linear infinite}
+@keyframes ptF{0%{opacity:0;transform:translateY(100vh) scale(0)}10%{opacity:.5}90%{opacity:.5}100%{opacity:0;transform:translateY(-20vh) scale(1)}}
+.glow{position:fixed;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,.06),transparent 60%);pointer-events:none;z-index:1;transform:translate(-50%,-50%)}
 
-.particles-container{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.particle{position:absolute;width:2px;height:2px;background:var(--accent-light);border-radius:50%;opacity:0;animation:particleFloat linear infinite}
-@keyframes particleFloat{0%{opacity:0;transform:translateY(100vh) scale(0)}10%{opacity:.6}90%{opacity:.6}100%{opacity:0;transform:translateY(-20vh) scale(1)}}
-
-.mouse-glow{position:fixed;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,.06),transparent 60%);pointer-events:none;z-index:1;transform:translate(-50%,-50%)}
-
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 48px;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(5,5,7,.6);backdrop-filter:blur(40px) saturate(1.5);-webkit-backdrop-filter:blur(40px) saturate(1.5);border-bottom:1px solid var(--border);transition:all .4s ease}
-.nav.scrolled{background:rgba(5,5,7,.9)}
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 48px;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(5,5,7,.6);backdrop-filter:blur(40px) saturate(1.5);-webkit-backdrop-filter:blur(40px) saturate(1.5);border-bottom:1px solid var(--bd);transition:background .4s}
+.nav.scrolled{background:rgba(5,5,7,.92)}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.nav-logo-img{width:38px;height:38px;object-fit:contain;border-radius:10px}
-.nav-logo-text{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;letter-spacing:-.03em;background:linear-gradient(135deg,#fff,rgba(255,255,255,.75));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.nav-links{display:flex;align-items:center;gap:36px;list-style:none}
-.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:.875rem;font-weight:450;transition:color .3s ease;position:relative}
-.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--accent);transition:width .3s ease}
-.nav-links a:hover{color:var(--text-primary)}
+.nav-logo img{width:38px;height:38px;object-fit:contain;border-radius:10px}
+.nav-logo span{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;letter-spacing:-.03em;background:linear-gradient(135deg,#fff,rgba(255,255,255,.75));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{color:var(--t2);text-decoration:none;font-size:.875rem;font-weight:450;transition:color .3s;position:relative}
+.nav-links a:hover{color:var(--t1)}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--ac);transition:width .3s}
 .nav-links a:hover::after{width:100%}
-.nav-cta{display:flex;align-items:center;gap:16px}
-.btn-nav{padding:10px 22px;border-radius:10px;font-size:.875rem;font-weight:500;text-decoration:none;transition:all .3s ease;cursor:pointer;border:none}
-.btn-ghost{background:transparent;color:var(--text-secondary)}
-.btn-ghost:hover{color:var(--text-primary)}
-.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:white;box-shadow:0 0 20px var(--accent-glow)}
+.nav-cta{display:flex;align-items:center;gap:12px}
+.btn-nav{padding:10px 20px;border-radius:10px;font-size:.85rem;font-weight:500;text-decoration:none;transition:all .3s;cursor:pointer;border:none;font-family:'Inter',sans-serif}
+.btn-ghost{background:transparent;color:var(--t2)}
+.btn-ghost:hover{color:var(--t1)}
+.btn-primary{background:linear-gradient(135deg,var(--ac),var(--ac3));color:white;box-shadow:0 0 20px var(--acg)}
 .btn-primary:hover{transform:translateY(-1px);box-shadow:0 0 30px rgba(99,102,241,.3)}
-.nav-mobile-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
-.nav-mobile-toggle span{width:22px;height:1.5px;background:var(--text-primary);transition:all .3s ease}
+.mob-tog{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
+.mob-tog span{width:22px;height:1.5px;background:var(--t1);transition:all .3s}
 
+/* HERO */
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;padding:120px 48px 80px;overflow:hidden}
-.hero-light{position:absolute;top:-30%;left:50%;transform:translateX(-50%);width:800px;height:600px;background:radial-gradient(ellipse,rgba(99,102,241,.15) 0%,transparent 60%);pointer-events:none;animation:heroLightPulse 6s ease-in-out infinite}
-@keyframes heroLightPulse{0%,100%{opacity:.6;transform:translateX(-50%) scale(1)}50%{opacity:1;transform:translateX(-50%) scale(1.1)}}
-.hero-content{text-align:center;max-width:900px;position:relative;z-index:2}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px 6px 8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:.8rem;color:var(--text-secondary);margin-bottom:32px;animation:fadeInUp .8s ease forwards;backdrop-filter:blur(10px)}
-.hero-badge-dot{width:8px;height:8px;background:#22c55e;border-radius:50%;animation:pulse 2s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
-.hero-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(3rem,7vw,5.5rem);font-weight:700;line-height:1.05;letter-spacing:-.04em;margin-bottom:24px;animation:fadeInUp .8s ease .1s forwards;opacity:0}
-.hero-title .gradient-text{background:linear-gradient(135deg,var(--accent-light),var(--accent2),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-size:200% 200%;animation:gradientShift 5s ease infinite}
-@keyframes gradientShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-.hero-subtitle{font-size:clamp(1.05rem,2vw,1.2rem);color:var(--text-secondary);max-width:580px;margin:0 auto 40px;line-height:1.7;animation:fadeInUp .8s ease .2s forwards;opacity:0}
-.hero-actions{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;animation:fadeInUp .8s ease .3s forwards;opacity:0}
-.btn-hero-primary{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:white;font-size:.95rem;font-weight:600;border-radius:14px;text-decoration:none;border:none;cursor:pointer;transition:all .4s ease;box-shadow:0 4px 30px var(--accent-glow),inset 0 1px 0 rgba(255,255,255,.1);position:relative;overflow:hidden}
-.btn-hero-primary::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.15),transparent);opacity:0;transition:opacity .3s ease}
-.btn-hero-primary:hover::before{opacity:1}
-.btn-hero-primary:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(99,102,241,.4)}
-.btn-hero-secondary{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;background:var(--bg-card);color:var(--text-primary);font-size:.95rem;font-weight:500;border-radius:14px;text-decoration:none;border:1px solid var(--border);cursor:pointer;transition:all .3s ease;backdrop-filter:blur(10px)}
-.btn-hero-secondary:hover{background:var(--bg-card-hover);border-color:var(--border-hover);transform:translateY(-2px)}
-.hero-metrics{display:flex;align-items:center;justify-content:center;gap:48px;margin-top:64px;animation:fadeInUp .8s ease .4s forwards;opacity:0}
-.hero-metric{text-align:center}
-.hero-metric-value{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,var(--text-primary),var(--text-secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero-metric-label{font-size:.8rem;color:var(--text-tertiary);margin-top:4px;text-transform:uppercase;letter-spacing:.08em;font-weight:500}
-.hero-floating-cards{position:absolute;inset:0;pointer-events:none;z-index:1}
-.floating-card{position:absolute;background:rgba(255,255,255,.03);backdrop-filter:blur(20px);border:1px solid var(--border);border-radius:16px;padding:20px;animation:float 8s ease-in-out infinite}
-.floating-card-1{top:20%;left:5%;width:200px;animation-delay:-2s}
-.floating-card-2{top:30%;right:5%;width:180px;animation-delay:-4s}
-.floating-card-3{bottom:15%;left:10%;width:160px;animation-delay:-1s}
-@keyframes float{0%,100%{transform:translateY(0) rotate(0deg)}25%{transform:translateY(-15px) rotate(1deg)}75%{transform:translateY(10px) rotate(-1deg)}}
-.fc-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:10px}
-.fc-title{font-size:.75rem;color:var(--text-secondary);font-weight:500}
-.fc-value{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:600;margin-top:2px}
-@keyframes fadeInUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.hero-light{position:absolute;top:-30%;left:50%;transform:translateX(-50%);width:800px;height:600px;background:radial-gradient(ellipse,rgba(99,102,241,.15) 0%,transparent 60%);pointer-events:none;animation:hlp 6s ease-in-out infinite}
+@keyframes hlp{0%,100%{opacity:.6;transform:translateX(-50%) scale(1)}50%{opacity:1;transform:translateX(-50%) scale(1.1)}}
+.hero-c{text-align:center;max-width:900px;position:relative;z-index:2}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px 6px 8px;background:var(--card);border:1px solid var(--bd);border-radius:100px;font-size:.8rem;color:var(--t2);margin-bottom:32px;animation:fiu .8s ease forwards;backdrop-filter:blur(10px)}
+.badge-dot{width:8px;height:8px;background:#22c55e;border-radius:50%;animation:pls 2s ease-in-out infinite}
+@keyframes pls{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+.hero-t{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.8rem,7vw,5.5rem);font-weight:700;line-height:1.05;letter-spacing:-.04em;margin-bottom:24px;animation:fiu .8s ease .1s forwards;opacity:0}
+.grad{background:linear-gradient(135deg,var(--ac2),var(--ac3),var(--ac4));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:200% 200%;animation:gs 5s ease infinite}
+@keyframes gs{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.hero-s{font-size:clamp(1rem,2vw,1.2rem);color:var(--t2);max-width:580px;margin:0 auto 40px;line-height:1.7;animation:fiu .8s ease .2s forwards;opacity:0}
+.hero-acts{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;animation:fiu .8s ease .3s forwards;opacity:0}
+.btn-hp{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;background:linear-gradient(135deg,var(--ac),var(--ac3));color:white;font-size:.95rem;font-weight:600;border-radius:14px;text-decoration:none;border:none;cursor:pointer;transition:all .4s;box-shadow:0 4px 30px var(--acg),inset 0 1px 0 rgba(255,255,255,.1);position:relative;overflow:hidden;font-family:'Inter',sans-serif}
+.btn-hp:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(99,102,241,.4)}
+.btn-hs{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;background:var(--card);color:var(--t1);font-size:.95rem;font-weight:500;border-radius:14px;text-decoration:none;border:1px solid var(--bd);cursor:pointer;transition:all .3s;backdrop-filter:blur(10px);font-family:'Inter',sans-serif}
+.btn-hs:hover{background:var(--card2);border-color:var(--bd2);transform:translateY(-2px)}
+.hero-m{display:flex;align-items:center;justify-content:center;gap:48px;margin-top:64px;animation:fiu .8s ease .4s forwards;opacity:0}
+.hm{text-align:center}
+.hm-v{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,var(--t1),var(--t2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hm-l{font-size:.78rem;color:var(--t3);margin-top:4px;text-transform:uppercase;letter-spacing:.08em;font-weight:500}
+.float-cards{position:absolute;inset:0;pointer-events:none;z-index:1}
+.fc{position:absolute;background:rgba(255,255,255,.03);backdrop-filter:blur(20px);border:1px solid var(--bd);border-radius:16px;padding:18px;animation:flt 8s ease-in-out infinite}
+.fc1{top:20%;left:5%;width:190px;animation-delay:-2s}
+.fc2{top:30%;right:5%;width:175px;animation-delay:-4s}
+.fc3{bottom:15%;left:10%;width:155px;animation-delay:-1s}
+@keyframes flt{0%,100%{transform:translateY(0) rotate(0deg)}25%{transform:translateY(-15px) rotate(1deg)}75%{transform:translateY(10px) rotate(-1deg)}}
+.fci{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;margin-bottom:8px}
+.fct{font-size:.72rem;color:var(--t2);font-weight:500}
+.fcv{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:600;margin-top:2px}
+@keyframes fiu{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 
+/* SECTIONS */
 section{position:relative;z-index:2}
-.section-container{max-width:1200px;margin:0 auto;padding:0 48px}
-.section-header{text-align:center;margin-bottom:64px}
-.section-label{display:inline-flex;align-items:center;gap:8px;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--accent-light);margin-bottom:16px}
-.section-label::before,.section-label::after{content:'';width:20px;height:1px;background:linear-gradient(90deg,transparent,var(--accent))}
-.section-label::after{background:linear-gradient(90deg,var(--accent),transparent)}
-.section-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;letter-spacing:-.03em;line-height:1.15;margin-bottom:16px}
-.section-desc{font-size:1.05rem;color:var(--text-secondary);max-width:560px;margin:0 auto;line-height:1.7}
+.sc{max-width:1200px;margin:0 auto;padding:0 48px}
+.sh{text-align:center;margin-bottom:64px}
+.sl{display:inline-flex;align-items:center;gap:8px;font-size:.73rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--ac2);margin-bottom:14px}
+.sl::before,.sl::after{content:'';width:20px;height:1px;background:linear-gradient(90deg,transparent,var(--ac))}
+.sl::after{background:linear-gradient(90deg,var(--ac),transparent)}
+.st{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;letter-spacing:-.03em;line-height:1.15;margin-bottom:14px}
+.sd{font-size:1rem;color:var(--t2);max-width:540px;margin:0 auto;line-height:1.7}
 
-.trusted-section{padding:60px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:rgba(255,255,255,.01)}
-.trusted-label{text-align:center;font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text-tertiary);margin-bottom:32px;font-weight:500}
-.trusted-logos{display:flex;align-items:center;justify-content:center;gap:56px;flex-wrap:wrap;opacity:.4;transition:opacity .3s ease}
-.trusted-logos:hover{opacity:.6}
-.trusted-logo{font-family:'Space Grotesk',sans-serif;font-size:1.25rem;font-weight:600;color:var(--text-secondary)}
+/* TRUSTED */
+.trusted{padding:55px 0;border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);background:rgba(255,255,255,.01)}
+.tl{text-align:center;font-size:.73rem;text-transform:uppercase;letter-spacing:.12em;color:var(--t3);margin-bottom:28px;font-weight:500}
+.tlogos{display:flex;align-items:center;justify-content:center;gap:50px;flex-wrap:wrap;opacity:.4;transition:opacity .3s}
+.tlogos:hover{opacity:.6}
+.tlogo{font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:600;color:var(--t2)}
 
-.services-section{padding:140px 0}
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.service-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:40px 32px;transition:all .5s cubic-bezier(.23,1,.32,1);cursor:pointer;position:relative;overflow:hidden}
-.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0;transition:opacity .4s ease}
-.service-card:hover{background:var(--bg-card-hover);border-color:var(--border-hover);transform:translateY(-4px)}
-.service-card:hover::before{opacity:1}
-.service-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:24px}
-.si-web{background:rgba(99,102,241,.12)}.si-ai{background:rgba(139,92,246,.12)}.si-ecom{background:rgba(6,182,212,.12)}.si-brand{background:rgba(236,72,153,.12)}.si-seo{background:rgba(34,197,94,.12)}.si-growth{background:rgba(251,146,60,.12)}
-.service-title{font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:600;margin-bottom:12px}
-.service-desc{font-size:.9rem;color:var(--text-secondary);line-height:1.7;margin-bottom:24px}
-.service-features{list-style:none;display:flex;flex-direction:column;gap:8px}
-.service-features li{font-size:.82rem;color:var(--text-tertiary);display:flex;align-items:center;gap:8px}
-.service-features li::before{content:'✓';color:var(--accent-light);font-size:.7rem;font-weight:700}
+/* SERVICES */
+.srv{padding:130px 0}
+.srv-g{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.srv-c{background:var(--card);border:1px solid var(--bd);border-radius:22px;padding:36px 28px;transition:all .5s cubic-bezier(.23,1,.32,1);cursor:default;position:relative;overflow:hidden}
+.srv-c::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--ac),transparent);opacity:0;transition:opacity .4s}
+.srv-c:hover{background:var(--card2);border-color:var(--bd2);transform:translateY(-4px)}
+.srv-c:hover::before{opacity:1}
+.srv-i{width:48px;height:48px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:20px}
+.srv-t{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:600;margin-bottom:10px}
+.srv-d{font-size:.88rem;color:var(--t2);line-height:1.7;margin-bottom:20px}
+.srv-f{list-style:none;display:flex;flex-direction:column;gap:7px}
+.srv-f li{font-size:.8rem;color:var(--t3);display:flex;align-items:center;gap:7px}
+.srv-f li::before{content:'✓';color:var(--ac2);font-size:.68rem;font-weight:700}
 
-.templates-section{padding:140px 0}
-.template-tabs{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:48px}
-.template-tab{padding:10px 22px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:.82rem;font-weight:500;color:var(--text-secondary);cursor:pointer;transition:all .3s ease;font-family:'Inter',sans-serif}
-.template-tab:hover{border-color:var(--border-hover);color:var(--text-primary)}
-.template-tab.active{background:linear-gradient(135deg,var(--accent),var(--accent2));border-color:transparent;color:white}
-.templates-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.template-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);overflow:hidden;transition:all .6s cubic-bezier(.23,1,.32,1);cursor:pointer;position:relative;display:none}
-.template-card.visible-template{display:block}
-.template-card:hover{border-color:var(--border-hover);transform:translateY(-8px);box-shadow:0 24px 64px rgba(0,0,0,.4),0 0 40px var(--accent-glow)}
-.template-preview{height:260px;position:relative;overflow:hidden}
-.template-preview-inner{position:absolute;inset:12px;border-radius:10px;overflow:hidden;border:1px solid var(--border);transition:transform .5s ease}
-.template-card:hover .template-preview-inner{transform:scale(1.04)}
-.template-overlay{position:absolute;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .4s ease;z-index:10}
-.template-card:hover .template-overlay{opacity:1}
-.overlay-btn{padding:10px 24px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:white;border-radius:10px;font-size:.82rem;font-weight:600;cursor:pointer;transition:transform .3s ease;border:none;font-family:'Inter',sans-serif}
-.overlay-btn:hover{transform:scale(1.05)}
-.template-info{padding:22px 24px}
-.template-type{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-light);font-weight:600;margin-bottom:6px}
-.template-name{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:600;margin-bottom:6px}
-.template-desc{font-size:.8rem;color:var(--text-secondary);line-height:1.6;margin-bottom:14px}
-.template-meta{display:flex;align-items:center;justify-content:space-between}
-.template-tag{padding:4px 10px;background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.15);border-radius:100px;font-size:.7rem;color:var(--accent-light);font-weight:500}
+/* TEMPLATES */
+.tpls{padding:130px 0}
+.tpl-tabs{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:44px}
+.tpl-tab{padding:9px 20px;background:var(--card);border:1px solid var(--bd);border-radius:100px;font-size:.8rem;font-weight:500;color:var(--t2);cursor:pointer;transition:all .3s;font-family:'Inter',sans-serif}
+.tpl-tab:hover{border-color:var(--bd2);color:var(--t1)}
+.tpl-tab.active{background:linear-gradient(135deg,var(--ac),var(--ac3));border-color:transparent;color:white}
+.tpl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tpl-card{background:var(--card);border:1px solid var(--bd);border-radius:22px;overflow:hidden;transition:all .6s cubic-bezier(.23,1,.32,1);cursor:pointer;position:relative;display:none}
+.tpl-card.vis{display:block}
+.tpl-card:hover{border-color:var(--bd2);transform:translateY(-8px);box-shadow:0 24px 60px rgba(0,0,0,.4),0 0 40px var(--acg)}
+.tpl-prev{height:250px;position:relative;overflow:hidden}
+.tpl-prev-in{position:absolute;inset:12px;border-radius:10px;overflow:hidden;border:1px solid var(--bd);transition:transform .5s}
+.tpl-card:hover .tpl-prev-in{transform:scale(1.04)}
+.tpl-ov{position:absolute;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .4s;z-index:10}
+.tpl-card:hover .tpl-ov{opacity:1}
+.tpl-ov-btn{padding:10px 24px;background:linear-gradient(135deg,var(--ac),var(--ac3));color:white;border-radius:10px;font-size:.82rem;font-weight:600;cursor:pointer;border:none;font-family:'Inter',sans-serif;transition:transform .2s}
+.tpl-ov-btn:hover{transform:scale(1.05)}
+.tpl-info{padding:20px 22px}
+.tpl-type{font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ac2);font-weight:600;margin-bottom:5px}
+.tpl-name{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:600;margin-bottom:5px}
+.tpl-desc{font-size:.78rem;color:var(--t2);line-height:1.6;margin-bottom:12px}
+.tpl-meta{display:flex;align-items:center;justify-content:space-between}
+.tpl-tag{padding:4px 10px;background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.15);border-radius:100px;font-size:.68rem;color:var(--ac2);font-weight:500}
 
-.mockup-dot{width:6px;height:6px;border-radius:50%}.d1{background:#ff5f57}.d2{background:#ffbd2e}.d3{background:#28c840}
-.tpl-restaurant .mockup-hero{height:80px;background:linear-gradient(135deg,rgba(251,146,60,.3),rgba(220,50,50,.2));display:flex;align-items:center;justify-content:center;font-size:1.4rem}
-.tpl-restaurant .food-items{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
-.tpl-restaurant .food-item{height:50px;border-radius:6px;background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.12);display:flex;align-items:center;justify-content:center;font-size:1rem}
-.tpl-ecommerce .shop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:10px}
-.tpl-ecommerce .shop-item{border-radius:6px;background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.1);overflow:hidden}
-.tpl-ecommerce .shop-item-img{height:50px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;background:rgba(99,102,241,.08)}
-.tpl-ecommerce .shop-item-info{padding:4px 6px}
-.tpl-ecommerce .shop-item-line{height:5px;border-radius:3px;background:rgba(255,255,255,.06);margin-bottom:3px}
-.tpl-ecommerce .shop-item-line.price{width:50%;background:rgba(99,102,241,.3)}
-.tpl-agency .agency-hero{height:90px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:12px;background:linear-gradient(135deg,rgba(99,102,241,.1),rgba(139,92,246,.05))}
-.tpl-agency .agency-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;padding:10px}
-.tpl-agency .agency-card{height:55px;border-radius:6px;border:1px solid rgba(99,102,241,.12);background:rgba(99,102,241,.04);display:flex;align-items:center;justify-content:center;font-size:1rem}
+.mdot{width:6px;height:6px;border-radius:50%;display:inline-block}
+.md1{background:#ff5f57}.md2{background:#ffbd2e}.md3{background:#28c840}
+.mbar{height:26px;background:rgba(255,255,255,.04);border-bottom:1px solid var(--bd);display:flex;align-items:center;padding:0 10px;gap:5px}
 
-.process-section{padding:140px 0}
-.timeline{position:relative;max-width:800px;margin:0 auto}
-.timeline::before{content:'';position:absolute;left:32px;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,var(--accent),var(--accent2),transparent)}
-.timeline-item{display:flex;gap:40px;margin-bottom:48px;position:relative;opacity:0;transform:translateX(-20px);transition:all .6s ease}
-.timeline-item.visible{opacity:1;transform:translateX(0)}
-.timeline-marker{width:64px;min-width:64px;display:flex;flex-direction:column;align-items:center}
-.timeline-dot{width:20px;height:20px;border-radius:50%;background:var(--bg-primary);border:2px solid var(--accent);position:relative;z-index:2;display:flex;align-items:center;justify-content:center}
-.timeline-dot::after{content:'';width:8px;height:8px;border-radius:50%;background:var(--accent)}
-.timeline-step{font-size:.7rem;font-weight:700;color:var(--accent-light);margin-top:8px;text-transform:uppercase;letter-spacing:.1em}
-.timeline-content{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 32px;flex:1;transition:all .3s ease}
-.timeline-content:hover{background:var(--bg-card-hover);border-color:var(--border-hover)}
-.timeline-title{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:600;margin-bottom:8px}
-.timeline-desc{font-size:.88rem;color:var(--text-secondary);line-height:1.7}
-.timeline-duration{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:.75rem;color:var(--text-tertiary);padding:4px 10px;background:rgba(99,102,241,.06);border-radius:6px}
+/* PROCESS */
+.proc{padding:130px 0}
+.tl-wrap{position:relative;max-width:780px;margin:0 auto}
+.tl-wrap::before{content:'';position:absolute;left:30px;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,var(--ac),var(--ac3),transparent)}
+.tl-item{display:flex;gap:36px;margin-bottom:44px;position:relative;opacity:0;transform:translateX(-20px);transition:all .6s}
+.tl-item.vis{opacity:1;transform:translateX(0)}
+.tl-marker{width:60px;min-width:60px;display:flex;flex-direction:column;align-items:center}
+.tl-dot{width:18px;height:18px;border-radius:50%;background:var(--bg);border:2px solid var(--ac);position:relative;z-index:2;display:flex;align-items:center;justify-content:center}
+.tl-dot::after{content:'';width:7px;height:7px;border-radius:50%;background:var(--ac)}
+.tl-step{font-size:.68rem;font-weight:700;color:var(--ac2);margin-top:7px;text-transform:uppercase;letter-spacing:.1em}
+.tl-content{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:24px 28px;flex:1;transition:all .3s}
+.tl-content:hover{background:var(--card2);border-color:var(--bd2)}
+.tl-title{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:600;margin-bottom:7px}
+.tl-desc{font-size:.85rem;color:var(--t2);line-height:1.7}
+.tl-dur{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:.73rem;color:var(--t3);padding:4px 10px;background:rgba(99,102,241,.06);border-radius:6px}
 
-.stats-section{padding:100px 0;background:var(--bg-secondary);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
-.stat-card{text-align:center;padding:40px 24px;border-radius:var(--radius-xl);background:var(--bg-card);border:1px solid var(--border);transition:all .4s ease}
-.stat-card:hover{border-color:var(--border-hover);transform:translateY(-4px)}
-.stat-number{font-family:'Space Grotesk',sans-serif;font-size:2.8rem;font-weight:700;background:linear-gradient(135deg,var(--accent-light),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}
-.stat-label{font-size:.85rem;color:var(--text-secondary)}
-.stat-sublabel{font-size:.72rem;color:var(--text-tertiary);margin-top:4px}
+/* STATS */
+.stats{padding:90px 0;background:var(--bg2);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)}
+.stats-g{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.stat-c{text-align:center;padding:36px 20px;border-radius:22px;background:var(--card);border:1px solid var(--bd);transition:all .4s}
+.stat-c:hover{border-color:var(--bd2);transform:translateY(-4px)}
+.stat-n{font-family:'Space Grotesk',sans-serif;font-size:2.6rem;font-weight:700;background:linear-gradient(135deg,var(--ac2),var(--ac3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:4px}
+.stat-l{font-size:.83rem;color:var(--t2)}
+.stat-sl{font-size:.7rem;color:var(--t3);margin-top:3px}
 
-.testimonials-section{padding:140px 0}
-.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.testimonial-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:36px 32px;transition:all .4s ease;display:flex;flex-direction:column}
-.testimonial-card:hover{border-color:var(--border-hover);background:var(--bg-card-hover);transform:translateY(-4px)}
-.testimonial-stars{display:flex;gap:2px;margin-bottom:20px;color:#fbbf24;font-size:.9rem}
-.testimonial-text{font-size:.95rem;color:var(--text-secondary);line-height:1.75;flex:1;margin-bottom:24px;font-style:italic}
-.testimonial-author{display:flex;align-items:center;gap:14px;padding-top:20px;border-top:1px solid var(--border)}
-.testimonial-avatar{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:700;background:linear-gradient(135deg,var(--accent),var(--accent2));color:white}
-.testimonial-name{font-size:.9rem;font-weight:600}
-.testimonial-role{font-size:.75rem;color:var(--text-tertiary)}
+/* TESTIMONIALS */
+.test{padding:130px 0}
+.test-g{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.test-c{background:var(--card);border:1px solid var(--bd);border-radius:22px;padding:32px 28px;transition:all .4s;display:flex;flex-direction:column}
+.test-c:hover{border-color:var(--bd2);background:var(--card2);transform:translateY(-4px)}
+.test-stars{display:flex;gap:2px;margin-bottom:18px;color:#fbbf24;font-size:.88rem}
+.test-txt{font-size:.92rem;color:var(--t2);line-height:1.75;flex:1;margin-bottom:20px;font-style:italic}
+.test-auth{display:flex;align-items:center;gap:12px;padding-top:18px;border-top:1px solid var(--bd)}
+.test-av{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:700;background:linear-gradient(135deg,var(--ac),var(--ac3));color:white;font-size:.9rem}
+.test-name{font-size:.88rem;font-weight:600}
+.test-role{font-size:.73rem;color:var(--t3)}
 
-.pricing-section{padding:140px 0;background:linear-gradient(180deg,transparent,rgba(99,102,241,.02),transparent)}
-.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start;max-width:960px;margin:0 auto}
-.pricing-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:44px 36px;transition:all .4s ease;position:relative}
-.pricing-card.featured{background:var(--bg-card-hover);border-color:var(--accent);box-shadow:0 0 60px var(--accent-glow);transform:scale(1.04)}
-.pricing-card:hover{border-color:var(--border-hover);transform:translateY(-4px)}
-.pricing-card.featured:hover{transform:scale(1.04) translateY(-4px)}
-.pricing-medal{font-size:2rem;margin-bottom:16px}
-.pricing-popular{position:absolute;top:-13px;left:50%;transform:translateX(-50%);padding:4px 18px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:white;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;border-radius:100px;white-space:nowrap}
-.pricing-name{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:700;margin-bottom:6px}
-.pricing-desc{font-size:.82rem;color:var(--text-tertiary);margin-bottom:28px;line-height:1.6}
-.pricing-price{display:flex;align-items:baseline;gap:4px;margin-bottom:28px}
-.pricing-currency{font-size:1.3rem;font-weight:600;color:var(--text-secondary)}
-.pricing-amount{font-family:'Space Grotesk',sans-serif;font-size:3.5rem;font-weight:700;letter-spacing:-.04em;line-height:1}
-.pricing-divider{height:1px;background:var(--border);margin-bottom:24px}
-.pricing-features-title{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-tertiary);font-weight:600;margin-bottom:14px}
-.pricing-features{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
-.pricing-features li{font-size:.85rem;color:var(--text-secondary);display:flex;align-items:flex-start;gap:10px;line-height:1.5}
-.pricing-features li::before{content:'✓';color:var(--accent-light);font-weight:700;font-size:.75rem;margin-top:2px;flex-shrink:0}
-.pricing-best-for{padding:14px;background:rgba(99,102,241,.04);border:1px solid rgba(99,102,241,.1);border-radius:10px;margin-bottom:24px}
-.pricing-best-for-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-light);font-weight:600;margin-bottom:4px}
-.pricing-best-for-text{font-size:.8rem;color:var(--text-secondary);line-height:1.5}
-.btn-pricing{width:100%;padding:15px;border-radius:12px;font-size:.9rem;font-weight:600;cursor:pointer;transition:all .3s ease;border:none;text-align:center;text-decoration:none;display:block;font-family:'Inter',sans-serif}
-.btn-pricing-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:white;box-shadow:0 4px 20px var(--accent-glow)}
-.btn-pricing-primary:hover{box-shadow:0 8px 30px rgba(99,102,241,.35);transform:translateY(-2px)}
-.btn-pricing-outline{background:transparent;color:var(--text-primary);border:1px solid var(--border)}
-.btn-pricing-outline:hover{border-color:var(--border-hover);background:var(--bg-card)}
+/* PRICING */
+.price{padding:130px 0;background:linear-gradient(180deg,transparent,rgba(99,102,241,.02),transparent)}
+.price-g{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start;max-width:940px;margin:0 auto}
+.price-c{background:var(--card);border:1px solid var(--bd);border-radius:22px;padding:40px 32px;transition:all .4s;position:relative}
+.price-c.feat{background:var(--card2);border-color:var(--ac);box-shadow:0 0 60px var(--acg);transform:scale(1.04)}
+.price-c:hover{border-color:var(--bd2);transform:translateY(-4px)}
+.price-c.feat:hover{transform:scale(1.04) translateY(-4px)}
+.price-pop{position:absolute;top:-13px;left:50%;transform:translateX(-50%);padding:4px 16px;background:linear-gradient(135deg,var(--ac),var(--ac3));color:white;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;border-radius:100px;white-space:nowrap}
+.price-medal{font-size:1.8rem;margin-bottom:14px}
+.price-name{font-family:'Space Grotesk',sans-serif;font-size:1.25rem;font-weight:700;margin-bottom:5px}
+.price-desc{font-size:.8rem;color:var(--t3);margin-bottom:24px;line-height:1.6}
+.price-pr{display:flex;align-items:baseline;gap:4px;margin-bottom:24px}
+.price-cur{font-size:1.2rem;font-weight:600;color:var(--t2)}
+.price-amt{font-family:'Space Grotesk',sans-serif;font-size:3.2rem;font-weight:700;letter-spacing:-.04em;line-height:1}
+.price-div{height:1px;background:var(--bd);margin-bottom:20px}
+.price-ft{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--t3);font-weight:600;margin-bottom:12px}
+.price-fl{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:28px}
+.price-fl li{font-size:.83rem;color:var(--t2);display:flex;align-items:flex-start;gap:9px;line-height:1.5}
+.price-fl li::before{content:'✓';color:var(--ac2);font-weight:700;font-size:.73rem;margin-top:2px;flex-shrink:0}
+.price-bf{padding:12px;background:rgba(99,102,241,.04);border:1px solid rgba(99,102,241,.1);border-radius:10px;margin-bottom:22px}
+.price-bfl{font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ac2);font-weight:600;margin-bottom:3px}
+.price-bft{font-size:.78rem;color:var(--t2);line-height:1.5}
+.btn-price{width:100%;padding:14px;border-radius:12px;font-size:.88rem;font-weight:600;cursor:pointer;transition:all .3s;border:none;text-align:center;text-decoration:none;display:block;font-family:'Inter',sans-serif}
+.btn-pp{background:linear-gradient(135deg,var(--ac),var(--ac3));color:white;box-shadow:0 4px 20px var(--acg)}
+.btn-pp:hover{box-shadow:0 8px 30px rgba(99,102,241,.35);transform:translateY(-2px)}
+.btn-po{background:transparent;color:var(--t1);border:1px solid var(--bd)}
+.btn-po:hover{border-color:var(--bd2);background:var(--card)}
 
-.why-section{padding:80px 0;background:var(--bg-secondary);border-top:1px solid var(--border)}
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.why-item{display:flex;align-items:center;gap:12px;padding:16px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;transition:all .3s ease}
-.why-item:hover{border-color:var(--border-hover);background:var(--bg-card-hover)}
-.why-text{font-size:.85rem;font-weight:500;color:var(--text-secondary)}
+/* WHY */
+.why{padding:75px 0;background:var(--bg2);border-top:1px solid var(--bd)}
+.why-g{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.why-i{display:flex;align-items:center;gap:10px;padding:14px 18px;background:var(--card);border:1px solid var(--bd);border-radius:12px;transition:all .3s}
+.why-i:hover{border-color:var(--bd2);background:var(--card2)}
+.why-t{font-size:.83rem;font-weight:500;color:var(--t2)}
 
-.contact-section{padding:140px 0;background:linear-gradient(180deg,transparent,rgba(99,102,241,.02),transparent)}
-.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:48px}
-.contact-info{display:flex;flex-direction:column;gap:32px}
-.contact-info-title{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;letter-spacing:-.03em;line-height:1.2}
-.contact-info-desc{font-size:.95rem;color:var(--text-secondary);line-height:1.7}
-.contact-channels{display:flex;flex-direction:column;gap:14px}
-.contact-channel{display:flex;align-items:center;gap:16px;padding:16px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:14px;text-decoration:none;color:var(--text-primary);transition:all .3s ease}
-.contact-channel:hover{border-color:var(--border-hover);background:var(--bg-card-hover);transform:translateX(4px)}
-.contact-channel-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
-.cci-whatsapp{background:rgba(37,211,102,.12)}.cci-email{background:rgba(99,102,241,.12)}.cci-call{background:rgba(6,182,212,.12)}
-.contact-channel-label{font-size:.72rem;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
-.contact-channel-value{font-size:.9rem;font-weight:550}
-.contact-form-container{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-2xl);padding:40px;position:relative;overflow:hidden}
-.contact-form-container::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
-.form-group{display:flex;flex-direction:column;gap:6px}
-.form-group.full{grid-column:1/-1}
-.form-label{font-size:.8rem;font-weight:550;color:var(--text-secondary)}
-.form-input,.form-select,.form-textarea{padding:12px 16px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;color:var(--text-primary);font-size:.88rem;font-family:'Inter',sans-serif;transition:all .3s ease;outline:none}
-.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-glow)}
-.form-select{cursor:pointer;-webkit-appearance:none}
-.form-select option{background:var(--bg-primary);color:var(--text-primary)}
-.form-textarea{resize:vertical;min-height:100px}
-.btn-submit{width:100%;padding:16px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:white;font-size:.95rem;font-weight:600;border:none;border-radius:12px;cursor:pointer;transition:all .3s ease;margin-top:8px;font-family:'Inter',sans-serif;box-shadow:0 4px 20px var(--accent-glow)}
-.btn-submit:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(99,102,241,.3)}
+/* FAQ */
+.faq{padding:130px 0}
+.faq-list{max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:11px}
+.faq-i{background:var(--card);border:1px solid var(--bd);border-radius:14px;overflow:hidden;transition:border-color .3s}
+.faq-i:hover{border-color:var(--bd2)}
+.faq-q{width:100%;padding:20px 24px;background:none;border:none;color:var(--t1);font-size:.93rem;font-weight:550;text-align:left;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:14px;font-family:'Inter',sans-serif}
+.faq-ic{width:22px;height:22px;border-radius:6px;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:.83rem;color:var(--t3);transition:all .3s;flex-shrink:0}
+.faq-i.open .faq-ic{background:var(--ac);color:white;transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s}
+.faq-ai{padding:0 24px 20px;font-size:.85rem;color:var(--t2);line-height:1.75}
 
-.cta-section{padding:120px 0;text-align:center;position:relative}
+/* CONTACT */
+.contact{padding:130px 0;background:linear-gradient(180deg,transparent,rgba(99,102,241,.02),transparent)}
+.contact-g{display:grid;grid-template-columns:1fr 1.2fr;gap:44px}
+.contact-info{display:flex;flex-direction:column;gap:28px}
+.ci-t{font-family:'Space Grotesk',sans-serif;font-size:1.9rem;font-weight:700;letter-spacing:-.03em;line-height:1.2}
+.ci-d{font-size:.93rem;color:var(--t2);line-height:1.7}
+.ci-chs{display:flex;flex-direction:column;gap:12px}
+.ci-ch{display:flex;align-items:center;gap:14px;padding:14px 18px;background:var(--card);border:1px solid var(--bd);border-radius:14px;text-decoration:none;color:var(--t1);transition:all .3s}
+.ci-ch:hover{border-color:var(--bd2);background:var(--card2);transform:translateX(4px)}
+.ci-ch-i{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem}
+.ci-ch-l{font-size:.7rem;color:var(--t3);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.ci-ch-v{font-size:.88rem;font-weight:550}
+.cf-wrap{background:var(--card);border:1px solid var(--bd);border-radius:28px;padding:36px;position:relative;overflow:hidden}
+.cf-wrap::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--ac),var(--ac3))}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.fg{display:flex;flex-direction:column;gap:5px}
+.fg.full{grid-column:1/-1}
+.fl{font-size:.78rem;font-weight:550;color:var(--t2)}
+.fi,.fsel,.fta{padding:11px 14px;background:var(--bg2);border:1px solid var(--bd);border-radius:10px;color:var(--t1);font-size:.86rem;font-family:'Inter',sans-serif;transition:all .3s;outline:none}
+.fi:focus,.fsel:focus,.fta:focus{border-color:var(--ac);box-shadow:0 0 0 3px var(--acg)}
+.fsel{cursor:pointer;-webkit-appearance:none}
+.fsel option{background:var(--bg);color:var(--t1)}
+.fta{resize:vertical;min-height:90px}
+.btn-sub{width:100%;padding:14px;background:linear-gradient(135deg,var(--ac),var(--ac3));color:white;font-size:.93rem;font-weight:600;border:none;border-radius:12px;cursor:pointer;transition:all .3s;margin-top:6px;font-family:'Inter',sans-serif;box-shadow:0 4px 20px var(--acg)}
+.btn-sub:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(99,102,241,.3)}
+
+/* CTA */
+.cta{padding:110px 0;text-align:center;position:relative}
 .cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(99,102,241,.1),transparent);pointer-events:none}
-.cta-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:700;letter-spacing:-.03em;margin-bottom:20px;position:relative;z-index:2}
-.cta-desc{font-size:1.1rem;color:var(--text-secondary);max-width:500px;margin:0 auto 36px;position:relative;z-index:2}
-.cta-actions{display:flex;align-items:center;justify-content:center;gap:16px;position:relative;z-index:2;flex-wrap:wrap}
-.cta-scarcity{margin-top:24px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:.82rem;color:var(--text-tertiary);position:relative;z-index:2}
-.scarcity-dot{width:6px;height:6px;border-radius:50%;background:#f97316;animation:pulse 1.5s ease-in-out infinite}
+.cta-t{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:700;letter-spacing:-.03em;margin-bottom:18px;position:relative;z-index:2}
+.cta-d{font-size:1.05rem;color:var(--t2);max-width:480px;margin:0 auto 32px;position:relative;z-index:2}
+.cta-acts{display:flex;align-items:center;justify-content:center;gap:14px;position:relative;z-index:2;flex-wrap:wrap}
+.cta-sc{margin-top:22px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:.8rem;color:var(--t3);position:relative;z-index:2}
+.sc-dot{width:6px;height:6px;border-radius:50%;background:#f97316;animation:pls 1.5s ease-in-out infinite}
 
-.footer{border-top:1px solid var(--border);padding:80px 0 40px;background:var(--bg-secondary)}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px}
-.footer-brand-logo{display:flex;align-items:center;gap:10px;margin-bottom:14px}
-.footer-logo-img{width:36px;height:36px;object-fit:contain;border-radius:10px}
-.footer-brand-name-text{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;background:linear-gradient(135deg,#fff,rgba(255,255,255,.7));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.footer-brand-desc{font-size:.88rem;color:var(--text-secondary);line-height:1.7;max-width:320px}
-.footer-tagline{font-size:.75rem;color:var(--accent-light);margin-top:8px;font-style:italic}
-.footer-column-title{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-tertiary);font-weight:600;margin-bottom:20px}
-.footer-links{list-style:none;display:flex;flex-direction:column;gap:12px}
-.footer-links a{color:var(--text-secondary);text-decoration:none;font-size:.88rem;transition:color .3s ease}
-.footer-links a:hover{color:var(--text-primary)}
-.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:32px;border-top:1px solid var(--border)}
-.footer-copyright{font-size:.82rem;color:var(--text-tertiary)}
-.footer-socials{display:flex;gap:12px}
-.footer-social{width:36px;height:36px;border-radius:10px;background:var(--bg-card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--text-secondary);font-size:.85rem;transition:all .3s ease}
-.footer-social:hover{border-color:var(--border-hover);color:var(--text-primary);transform:translateY(-2px)}
+/* FOOTER */
+.foot{border-top:1px solid var(--bd);padding:70px 0 36px;background:var(--bg2)}
+.foot-g{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;margin-bottom:56px}
+.foot-logo{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.foot-logo img{width:34px;height:34px;object-fit:contain;border-radius:10px}
+.foot-logo span{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:700;background:linear-gradient(135deg,#fff,rgba(255,255,255,.7));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.foot-desc{font-size:.85rem;color:var(--t2);line-height:1.7;max-width:300px}
+.foot-tag{font-size:.73rem;color:var(--ac2);margin-top:7px;font-style:italic}
+.foot-ct{font-size:.73rem;text-transform:uppercase;letter-spacing:.1em;color:var(--t3);font-weight:600;margin-bottom:18px}
+.foot-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.foot-links a{color:var(--t2);text-decoration:none;font-size:.85rem;transition:color .3s}
+.foot-links a:hover{color:var(--t1)}
+.foot-bot{display:flex;align-items:center;justify-content:space-between;padding-top:28px;border-top:1px solid var(--bd)}
+.foot-copy{font-size:.8rem;color:var(--t3)}
+.foot-soc{display:flex;gap:10px}
+.foot-soc a{width:34px;height:34px;border-radius:10px;background:var(--card);border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--t2);font-size:.83rem;transition:all .3s}
+.foot-soc a:hover{border-color:var(--bd2);color:var(--t1);transform:translateY(-2px)}
 
-.whatsapp-float{position:fixed;bottom:28px;right:28px;width:56px;height:56px;background:#25d366;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:white;text-decoration:none;z-index:999;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:all .3s ease;animation:floatPulse 3s ease-in-out infinite}
-.whatsapp-float:hover{transform:scale(1.1) translateY(-2px)}
-@keyframes floatPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)}50%{box-shadow:0 4px 30px rgba(37,211,102,.6)}}
+/* WHATSAPP FLOAT */
+.wa{position:fixed;bottom:26px;right:26px;width:54px;height:54px;background:#25d366;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:white;text-decoration:none;z-index:999;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:all .3s;animation:wap 3s ease-in-out infinite}
+.wa:hover{transform:scale(1.1) translateY(-2px)}
+@keyframes wap{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)}50%{box-shadow:0 4px 30px rgba(37,211,102,.6)}}
 
-.reveal{opacity:0;transform:translateY(30px);transition:all .7s cubic-bezier(.23,1,.32,1)}
-.reveal.visible{opacity:1;transform:translateY(0)}
+/* REVEAL */
+.rv{opacity:0;transform:translateY(28px);transition:all .7s cubic-bezier(.23,1,.32,1)}
+.rv.vis{opacity:1;transform:translateY(0)}
 
-.faq-section{padding:140px 0}
-.faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
-.faq-item{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
-.faq-item:hover{border-color:var(--border-hover)}
-.faq-question{width:100%;padding:22px 28px;background:none;border:none;color:var(--text-primary);font-size:.95rem;font-weight:550;text-align:left;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:'Inter',sans-serif}
-.faq-icon{width:24px;height:24px;border-radius:6px;background:var(--bg-secondary);display:flex;align-items:center;justify-content:center;font-size:.85rem;color:var(--text-tertiary);transition:all .3s ease;flex-shrink:0}
-.faq-item.open .faq-icon{background:var(--accent);color:white;transform:rotate(45deg)}
-.faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease}
-.faq-answer-inner{padding:0 28px 22px;font-size:.88rem;color:var(--text-secondary);line-height:1.75}
+/* SECRET PANEL */
+#secOv{display:none;position:fixed;inset:0;z-index:200000;background:rgba(0,0,0,.96);backdrop-filter:blur(20px);overflow:hidden}
+#secOv.showPw{display:flex;align-items:center;justify-content:center}
+#secOv.showAdmin{display:block;overflow-y:auto}
+.pw-box{text-align:center;max-width:400px;width:90%;padding:44px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:22px}
+.pw-ic{width:56px;height:56px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto 22px}
+.pw-t{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:7px}
+.pw-s{font-size:.83rem;color:rgba(245,245,247,.5);margin-bottom:28px}
+.pw-inp{width:100%;padding:13px 16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;color:#f5f5f7;font-size:.93rem;font-family:'Inter',sans-serif;outline:none;margin-bottom:10px;transition:all .3s}
+.pw-inp:focus{border-color:rgba(99,102,241,.6);box-shadow:0 0 0 3px rgba(99,102,241,.15)}
+.pw-err{color:#ef4444;font-size:.78rem;margin-bottom:10px;display:none}
+.pw-btn{width:100%;padding:13px;background:linear-gradient(135deg,#6366f1,#8b5cf6);color:white;border:none;border-radius:12px;font-size:.93rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif}
+.pw-close{width:100%;padding:11px;background:transparent;color:rgba(245,245,247,.4);border:none;font-size:.83rem;cursor:pointer;font-family:'Inter',sans-serif;margin-top:7px}
+.admin-panel{max-width:1080px;margin:0 auto;padding:36px 22px}
+.admin-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:36px;flex-wrap:wrap;gap:14px}
+.admin-logo{display:flex;align-items:center;gap:12px}
+.admin-logo img{width:42px;height:42px;border-radius:12px}
+.admin-logo-t{font-family:'Space Grotesk',sans-serif;font-size:1.25rem;font-weight:700}
+.admin-logo-s{font-size:.73rem;color:rgba(245,245,247,.4)}
+.admin-close{padding:9px 18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:rgba(245,245,247,.7);font-size:.83rem;cursor:pointer;font-family:'Inter',sans-serif}
+.admin-info{padding:14px 18px;background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.15);border-radius:12px;margin-bottom:28px;font-size:.8rem;color:rgba(245,245,247,.6);line-height:1.7}
+.p-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:18px;overflow:hidden;margin-bottom:18px;transition:border-color .3s}
+.p-card:hover{border-color:rgba(99,102,241,.3)}
+.p-head{padding:18px 22px;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;gap:12px}
+.p-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.p-name{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.93rem}
+.p-pkg{font-size:.7rem;color:rgba(245,245,247,.4);margin-top:1px}
+.p-copy{margin-left:auto;padding:7px 15px;background:linear-gradient(135deg,#6366f1,#8b5cf6);color:white;border:none;border-radius:8px;font-size:.73rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;white-space:nowrap;flex-shrink:0;transition:transform .2s}
+.p-copy:hover{transform:scale(1.05)}
+.p-body{padding:18px 22px}
+.p-ta{width:100%;height:190px;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.06);border-radius:10px;color:rgba(245,245,247,.7);font-size:.7rem;font-family:'Inter',sans-serif;padding:12px;resize:vertical;line-height:1.65;outline:none}
+#cpToast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);background:linear-gradient(135deg,#22c55e,#16a34a);color:white;padding:12px 26px;border-radius:100px;font-size:.85rem;font-weight:600;font-family:'Inter',sans-serif;z-index:999999;transition:transform .4s cubic-bezier(.23,1,.32,1);box-shadow:0 8px 30px rgba(34,197,94,.4);pointer-events:none}
+#cpToast.show{transform:translateX(-50%) translateY(0)}
 
+/* RESPONSIVE */
 @media(max-width:1024px){
-.services-grid,.templates-grid{grid-template-columns:repeat(2,1fr)}
-.pricing-grid{grid-template-columns:1fr;max-width:440px;margin:0 auto}
-.pricing-card.featured{transform:none}.pricing-card.featured:hover{transform:translateY(-4px)}
-.stats-grid{grid-template-columns:repeat(2,1fr)}
-.footer-grid{grid-template-columns:1fr 1fr}
-.why-grid{grid-template-columns:repeat(2,1fr)}
+  .srv-g,.tpl-grid{grid-template-columns:repeat(2,1fr)}
+  .price-g{grid-template-columns:1fr;max-width:420px;margin:0 auto}
+  .price-c.feat{transform:none}.price-c.feat:hover{transform:translateY(-4px)}
+  .stats-g{grid-template-columns:repeat(2,1fr)}
+  .foot-g{grid-template-columns:1fr 1fr}
+  .why-g{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:768px){
-.nav{padding:0 24px}.nav-links{display:none}.nav-mobile-toggle{display:flex}.nav-cta{display:none}
-.nav-links.mobile-open{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:rgba(5,5,7,.97);backdrop-filter:blur(40px);padding:24px;border-bottom:1px solid var(--border);gap:16px}
-.hero{padding:120px 24px 60px}.section-container{padding:0 24px}
-.hero-metrics{flex-direction:column;gap:24px}
-.services-grid,.templates-grid,.testimonials-grid,.why-grid{grid-template-columns:1fr}
-.contact-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}
-.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:16px;text-align:center}
-.floating-card,.cursor-follower,.cursor-dot{display:none}
-.timeline::before{left:16px}.timeline-item{gap:20px}.timeline-marker{width:32px;min-width:32px}
-.stats-grid{grid-template-columns:1fr 1fr}
+  .nav{padding:0 22px}.nav-links{display:none}.mob-tog{display:flex}.nav-cta{display:none}
+  .nav-links.mob-open{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:rgba(5,5,7,.97);backdrop-filter:blur(40px);padding:22px;border-bottom:1px solid var(--bd);gap:14px;z-index:100}
+  .hero{padding:110px 22px 60px}.sc{padding:0 22px}
+  .hero-m{flex-direction:column;gap:22px}
+  .srv-g,.tpl-grid,.test-g,.why-g{grid-template-columns:1fr}
+  .contact-g{grid-template-columns:1fr}.fr{grid-template-columns:1fr}
+  .foot-g{grid-template-columns:1fr}.foot-bot{flex-direction:column;gap:14px;text-align:center}
+  .fc,.cur,.dot{display:none}
+  .tl-wrap::before{left:14px}.tl-item{gap:18px}.tl-marker{width:28px;min-width:28px}
+  .stats-g{grid-template-columns:1fr 1fr}
 }
-
-/* SECRET PANEL STYLES */
-#secretOverlay{display:none;position:fixed;inset:0;z-index:999999;background:rgba(0,0,0,.95);backdrop-filter:blur(20px)}
-#secretOverlay.show-secret{display:flex;align-items:center;justify-content:center}
-#secretOverlay.show-admin{display:block;overflow-y:auto}
-.prompt-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:20px;overflow:hidden;transition:border-color .3s ease,background .3s ease;margin-bottom:20px}
-.prompt-card:hover{border-color:rgba(99,102,241,.3);background:rgba(255,255,255,.05)}
-.prompt-card-header{padding:20px 24px;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;gap:12px}
-.prompt-card-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
-.prompt-card-info{flex:1;min-width:0}
-.prompt-card-name{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.95rem}
-.prompt-card-pkg{font-size:.72rem;color:rgba(245,245,247,.4);margin-top:2px}
-.prompt-copy-btn{padding:8px 16px;background:linear-gradient(135deg,#6366f1,#8b5cf6);color:white;border:none;border-radius:8px;font-size:.75rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;white-space:nowrap;flex-shrink:0;transition:transform .2s ease}
-.prompt-copy-btn:hover{transform:scale(1.05)}
-.prompt-card-body{padding:20px 24px}
-.prompt-textarea{width:100%;height:200px;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.06);border-radius:10px;color:rgba(245,245,247,.7);font-size:.72rem;font-family:'Inter',sans-serif;padding:14px;resize:vertical;line-height:1.6;outline:none}
-#copyToast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(100px);background:linear-gradient(135deg,#22c55e,#16a34a);color:white;padding:14px 28px;border-radius:100px;font-size:.875rem;font-weight:600;font-family:'Inter',sans-serif;z-index:9999999;transition:transform .4s cubic-bezier(.23,1,.32,1);box-shadow:0 8px 30px rgba(34,197,94,.4);pointer-events:none}
-#copyToast.show-toast{transform:translateX(-50%) translateY(0)}
 </style>
 </head>
 <body>
 
-<div class="loader-screen" id="loader">
-<img src="https://i.imgur.com/XRLsmbg.jpeg" alt="NEXORA" class="loader-logo-img">
-<div class="loader-bar-container"><div class="loader-bar"></div></div>
+<!-- LOADER -->
+<div class="loader" id="loader">
+<img src="https://i.imgur.com/XRLsmbg.jpeg" alt="NEXORA">
+<div class="loader-bar-wrap"><div class="loader-bar"></div></div>
 </div>
 
-<div class="cursor-follower" id="cursorFollower"></div>
-<div class="cursor-dot" id="cursorDot"></div>
-<div class="bg-grid"></div>
-<div class="bg-gradient-orb orb-1"></div>
-<div class="bg-gradient-orb orb-2"></div>
-<div class="bg-gradient-orb orb-3"></div>
-<div class="mouse-glow" id="mouseGlow"></div>
-<div class="particles-container" id="particles"></div>
+<!-- CURSOR -->
+<div class="cur" id="cur"></div>
+<div class="dot" id="dotEl"></div>
 
+<!-- BG -->
+<div class="bgGrid"></div>
+<div class="orb o1"></div>
+<div class="orb o2"></div>
+<div class="orb o3"></div>
+<div class="glow" id="glowEl"></div>
+<div class="parts" id="parts"></div>
+
+<!-- NAV -->
 <nav class="nav" id="nav">
-<a href="#" class="nav-logo"><img src="https://i.imgur.com/XRLsmbg.jpeg" alt="NEXORA" class="nav-logo-img"><span class="nav-logo-text">NEXORA</span></a>
+<a href="#" class="nav-logo"><img src="https://i.imgur.com/XRLsmbg.jpeg" alt="N"><span>NEXORA</span></a>
 <ul class="nav-links" id="navLinks">
-<li><a href="#services">Services</a></li><li><a href="#templates">Templates</a></li><li><a href="#process">Process</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#contact">Contact</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#templates">Templates</a></li>
+<li><a href="#process">Process</a></li>
+<li><a href="#pricing">Pricing</a></li>
+<li><a href="#contact">Contact</a></li>
 </ul>
-<div class="nav-cta"><a href="#pricing" class="btn-nav btn-ghost">Pricing</a><a href="#contact" class="btn-nav btn-primary">Start Project</a></div>
-<button class="nav-mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></button>
+<div class="nav-cta">
+<a href="#pricing" class="btn-nav btn-ghost">Pricing</a>
+<a href="#contact" class="btn-nav btn-primary">Start Project</a>
+</div>
+<button class="mob-tog" id="mobTog" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
 <div class="hero-light"></div>
-<div class="hero-floating-cards">
-<div class="floating-card floating-card-1"><div class="fc-icon si-web">📈</div><div class="fc-title">Conversion</div><div class="fc-value" style="color:#22c55e">+340%</div></div>
-<div class="floating-card floating-card-2"><div class="fc-icon si-ai">⚡</div><div class="fc-title">Performance</div><div class="fc-value">99/100</div></div>
-<div class="floating-card floating-card-3"><div class="fc-icon si-ecom">🎯</div><div class="fc-title">Satisfaction</div><div class="fc-value" style="color:var(--accent-light)">98%</div></div>
+<div class="float-cards">
+<div class="fc fc1"><div class="fci" style="background:rgba(99,102,241,.12)">📈</div><div class="fct">Conversion</div><div class="fcv" style="color:#22c55e">+340%</div></div>
+<div class="fc fc2"><div class="fci" style="background:rgba(139,92,246,.12)">⚡</div><div class="fct">Performance</div><div class="fcv">99/100</div></div>
+<div class="fc fc3"><div class="fci" style="background:rgba(6,182,212,.12)">🎯</div><div class="fct">Satisfaction</div><div class="fcv" style="color:var(--ac2)">98%</div></div>
 </div>
-<div class="hero-content">
-<div class="hero-badge"><div class="hero-badge-dot"></div><span>3 project slots remaining this month</span></div>
-<h1 class="hero-title">We Build Websites<br>That <span class="gradient-text">Drive Growth</span></h1>
-<p class="hero-subtitle">Premium web development, AI solutions, and e-commerce — starting at just $29.</p>
-<div class="hero-actions">
-<a href="#contact" class="btn-hero-primary">Start Your Project →</a>
-<a href="#templates" class="btn-hero-secondary">View Templates ›</a>
+<div class="hero-c">
+<div class="hero-badge"><div class="badge-dot"></div><span>3 project slots remaining this month</span></div>
+<h1 class="hero-t">We Build Websites<br>That <span class="grad">Drive Growth</span></h1>
+<p class="hero-s">Premium web development, AI solutions, and e-commerce systems — starting at just $29.</p>
+<div class="hero-acts">
+<a href="#contact" class="btn-hp">Start Your Project →</a>
+<a href="#templates" class="btn-hs">View Templates ›</a>
 </div>
-<div class="hero-metrics">
-<div class="hero-metric"><div class="hero-metric-value">200+</div><div class="hero-metric-label">Projects Delivered</div></div>
-<div class="hero-metric"><div class="hero-metric-value">98%</div><div class="hero-metric-label">Satisfaction</div></div>
-<div class="hero-metric"><div class="hero-metric-value">From $29</div><div class="hero-metric-label">Premium Sites</div></div>
+<div class="hero-m">
+<div class="hm"><div class="hm-v">200+</div><div class="hm-l">Projects Delivered</div></div>
+<div class="hm"><div class="hm-v">98%</div><div class="hm-l">Satisfaction</div></div>
+<div class="hm"><div class="hm-v">From $29</div><div class="hm-l">Premium Sites</div></div>
 </div>
 </div>
 </section>
 
-<section class="trusted-section"><div class="section-container">
-<div class="trusted-label">Trusted by companies worldwide</div>
-<div class="trusted-logos"><span class="trusted-logo">Meridian</span><span class="trusted-logo">Arclight</span><span class="trusted-logo">Vertex</span><span class="trusted-logo">Luminary</span><span class="trusted-logo">Catalyst</span></div>
-</div></section>
-
-<section class="services-section" id="services"><div class="section-container">
-<div class="section-header reveal"><div class="section-label">Services</div><h2 class="section-title">Digital Solutions</h2><p class="section-desc">From concept to launch — we build experiences that drive results.</p></div>
-<div class="services-grid">
-<div class="service-card reveal"><div class="service-icon si-web">🌐</div><h3 class="service-title">Web Development</h3><p class="service-desc">Conversion-optimized websites with modern technology.</p><ul class="service-features"><li>Custom Development</li><li>Mobile Responsive</li><li>SEO Ready</li><li>WhatsApp Integration</li></ul></div>
-<div class="service-card reveal"><div class="service-icon si-ai">🤖</div><h3 class="service-title">AI Solutions</h3><p class="service-desc">AI chatbots and automation tools.</p><ul class="service-features"><li>AI Chatbot</li><li>Smart Recommendations</li><li>Automation</li><li>Analytics</li></ul></div>
-<div class="service-card reveal"><div class="service-icon si-ecom">🛒</div><h3 class="service-title">E-Commerce</h3><p class="service-desc">Online stores with WhatsApp ordering.</p><ul class="service-features"><li>WhatsApp Orders</li><li>Product Showcases</li><li>Payments</li><li>Inventory</li></ul></div>
-<div class="service-card reveal"><div class="service-icon si-brand">🎨</div><h3 class="service-title">Premium Design</h3><p class="service-desc">Stunning 2D/3D effects and animations.</p><ul class="service-features"><li>Custom Design</li><li>2D & 3D Effects</li><li>Animations</li><li>Interactive UX</li></ul></div>
-<div class="service-card reveal"><div class="service-icon si-seo">📊</div><h3 class="service-title">SEO & Performance</h3><p class="service-desc">Technical SEO and speed optimization.</p><ul class="service-features"><li>SEO Setup</li><li>Google Maps</li><li>Speed Optimization</li><li>Social Media</li></ul></div>
-<div class="service-card reveal"><div class="service-icon si-growth">🚀</div><h3 class="service-title">Growth Support</h3><p class="service-desc">Ongoing support and optimization.</p><ul class="service-features"><li>Priority Support</li><li>Monitoring</li><li>Optimization</li><li>Consultation</li></ul></div>
-</div></div></section>
-
-<section class="templates-section" id="templates"><div class="section-container">
-<div class="section-header reveal"><div class="section-label">Templates</div><h2 class="section-title">Industry Templates</h2><p class="section-desc">Active previews — fully customizable and ready to deploy.</p></div>
-<div class="template-tabs reveal">
-<button class="template-tab active" data-filter="all">All</button><button class="template-tab" data-filter="restaurant">Restaurant</button><button class="template-tab" data-filter="ecommerce">E-Commerce</button><button class="template-tab" data-filter="agency">Agency</button><button class="template-tab" data-filter="medical">Medical</button><button class="template-tab" data-filter="fitness">Fitness</button><button class="template-tab" data-filter="beauty">Beauty</button><button class="template-tab" data-filter="education">Education</button>
+<!-- TRUSTED -->
+<section class="trusted">
+<div class="sc">
+<div class="tl">Trusted by companies worldwide</div>
+<div class="tlogos"><span class="tlogo">Meridian</span><span class="tlogo">Arclight</span><span class="tlogo">Vertex</span><span class="tlogo">Luminary</span><span class="tlogo">Catalyst</span></div>
 </div>
-<div class="templates-grid">
-<div class="template-card visible-template" data-category="restaurant"><div class="template-overlay"><button class="overlay-btn" onclick="openWhatsApp('Restaurant')">Order Template →</button></div><div class="template-preview" style="background:linear-gradient(135deg,#1a0a00,#2d1500)"><div class="template-preview-inner"><div style="height:28px;background:rgba(255,255,255,.04);display:flex;align-items:center;padding:0 10px;gap:5px"><div class="mockup-dot d1"></div><div class="mockup-dot d2"></div><div class="mockup-dot d3"></div></div><div class="tpl-restaurant"><div class="mockup-hero">🍽️</div><div style="padding:12px"><div class="food-items"><div class="food-item">🍕</div><div class="food-item">🍔</div><div class="food-item">🍜</div><div class="food-item">🥗</div><div class="food-item">🍰</div><div class="food-item">🥤</div></div></div></div></div></div><div class="template-info"><div class="template-type">Restaurant</div><div class="template-name">The Grand Kitchen</div><div class="template-desc">Menu showcase with WhatsApp ordering.</div><div class="template-meta"><span class="template-tag">Business $59</span></div></div></div>
+</section>
 
-<div class="template-card visible-template" data-category="ecommerce"><div class="template-overlay"><button class="overlay-btn" onclick="openWhatsApp('E-Commerce')">Order Template →</button></div><div class="template-preview" style="background:linear-gradient(135deg,#0a0a1a,#1a0a2e)"><div class="template-preview-inner"><div class="tpl-ecommerce"><div style="height:28px;background:rgba(255,255,255,.04);display:flex;align-items:center;padding:0 10px;gap:5px"><div class="mockup-dot d1"></div><div class="mockup-dot d2"></div><div class="mockup-dot d3"></div></div><div class="shop-grid"><div class="shop-item"><div class="shop-item-img">👗</div><div class="shop-item-info"><div class="shop-item-line"></div><div class="shop-item-line price"></div></div></div><div class="shop-item"><div class="shop-item-img">👠</div><div class="shop-item-info"><div class="shop-item-line"></div><div class="shop-item-line price"></div></div></div><div class="shop-item"><div class="shop-item-img">👜</div><div class="shop-item-info"><div class="shop-item-line"></div><div class="shop-item-line price"></div></div></div></div></div></div></div><div class="template-info"><div class="template-type">E-Commerce</div><div class="template-name">ShopVault</div><div class="template-desc">Online store with WhatsApp checkout.</div><div class="template-meta"><span class="template-tag">Premium $99</span></div></div></div>
+<!-- SERVICES -->
+<section class="srv" id="services">
+<div class="sc">
+<div class="sh rv"><div class="sl">Services</div><h2 class="st">End-to-End Digital Solutions</h2><p class="sd">We build experiences that drive measurable business results.</p></div>
+<div class="srv-g">
+<div class="srv-c rv"><div class="srv-i" style="background:rgba(99,102,241,.12)">🌐</div><h3 class="srv-t">Web Development</h3><p class="srv-d">High-performance, conversion-optimized websites.</p><ul class="srv-f"><li>Custom Development</li><li>Mobile Responsive</li><li>SEO Ready</li><li>WhatsApp Integration</li></ul></div>
+<div class="srv-c rv"><div class="srv-i" style="background:rgba(139,92,246,.12)">🤖</div><h3 class="srv-t">AI Solutions</h3><p class="srv-d">AI chatbots and automation tools.</p><ul class="srv-f"><li>AI Chatbot</li><li>Smart Recommendations</li><li>Automation</li><li>Analytics</li></ul></div>
+<div class="srv-c rv"><div class="srv-i" style="background:rgba(6,182,212,.12)">🛒</div><h3 class="srv-t">E-Commerce</h3><p class="srv-d">Online stores with WhatsApp ordering.</p><ul class="srv-f"><li>WhatsApp Orders</li><li>Product Showcases</li><li>Payments</li><li>Inventory</li></ul></div>
+<div class="srv-c rv"><div class="srv-i" style="background:rgba(236,72,153,.12)">🎨</div><h3 class="srv-t">Premium Design</h3><p class="srv-d">Stunning 2D/3D effects and animations.</p><ul class="srv-f"><li>Custom Design</li><li>2D & 3D Effects</li><li>Animations</li><li>Interactive UX</li></ul></div>
+<div class="srv-c rv"><div class="srv-i" style="background:rgba(34,197,94,.12)">📊</div><h3 class="srv-t">SEO & Speed</h3><p class="srv-d">Technical SEO and performance optimization.</p><ul class="srv-f"><li>SEO Setup</li><li>Google Maps</li><li>Speed Optimization</li><li>Social Media</li></ul></div>
+<div class="srv-c rv"><div class="srv-i" style="background:rgba(251,146,60,.12)">🚀</div><h3 class="srv-t">Growth Support</h3><p class="srv-d">Ongoing support and optimization.</p><ul class="srv-f"><li>Priority Support</li><li>Monitoring</li><li>Optimization</li><li>Consultation</li></ul></div>
+</div>
+</div>
+</section>
 
-<div class="template-card visible-template" data-category="agency"><div class="template-overlay"><button class="overlay-btn" onclick="openWhatsApp('Agency')">Order Template →</button></div><div class="template-preview" style="background:linear-gradient(135deg,#050507,#0a0514)"><div class="template-preview-inner"><div class="tpl-agency"><div class="agency-hero"><div style="width:70%;height:9px;border-radius:4px;background:rgba(99,102,241,.5)"></div><div style="width:50%;height:7px;border-radius:4px;background:rgba(255,255,255,.08)"></div></div><div class="agency-cards"><div class="agency-card">💻</div><div class="agency-card">🎨</div><div class="agency-card">📊</div><div class="agency-card">🚀</div></div></div></div></div><div class="template-info"><div class="template-type">Agency</div><div class="template-name">Studio Nexus</div><div class="template-desc">Services and portfolio showcase.</div><div class="template-meta"><span class="template-tag">Business $59</span></div></div></div>
+<!-- TEMPLATES -->
+<section class="tpls" id="templates">
+<div class="sc">
+<div class="sh rv"><div class="sl">Live Templates</div><h2 class="st">Industry Templates</h2><p class="sd">Active previews — fully customizable and ready to deploy.</p></div>
+<div class="tpl-tabs rv">
+<button class="tpl-tab active" data-f="all">All</button>
+<button class="tpl-tab" data-f="restaurant">Restaurant</button>
+<button class="tpl-tab" data-f="ecommerce">E-Commerce</button>
+<button class="tpl-tab" data-f="agency">Agency</button>
+<button class="tpl-tab" data-f="medical">Medical</button>
+<button class="tpl-tab" data-f="fitness">Fitness</button>
+<button class="tpl-tab" data-f="beauty">Beauty</button>
+<button class="tpl-tab" data-f="education">Education</button>
+</div>
+<div class="tpl-grid">
 
-<div class="template-card visible-template" data-category="medical"><div class="template-overlay"><button class="overlay-btn" onclick="openWhatsApp('Medical')">Order Template →</button></div><div class="template-preview" style="background:linear-gradient(135deg,#050a1a,#051428)"><div class="template-preview-inner"><div style="height:50px;background:rgba(6,182,212,.08);display:flex;align-items:center;padding:0 12px;gap:8px"><div style="font-size:.8rem">➕</div><div style="height:8px;width:80px;border-radius:4px;background:rgba(6,182,212,.2)"></div></div><div style="padding:10px;display:grid;grid-template-columns:repeat(2,1fr);gap:6px"><div style="height:65px;border-radius:6px;background:rgba(6,182,212,.04);border:1px solid rgba(6,182,212,.1);display:flex;align-items:center;justify-content:center;font-size:1rem">👨‍⚕️</div><div style="height:65px;border-radius:6px;background:rgba(6,182,212,.04);border:1px solid rgba(6,182,212,.1);display:flex;align-items:center;justify-content:center;font-size:1rem">🏥</div><div style="height:65px;border-radius:6px;background:rgba(6,182,212,.04);border:1px solid rgba(6,182,212,.1);display:flex;align-items:center;justify-content:center;font-size:1rem">💊</div><div style="height:65px;border-radius:6px;background:rgba(6,182,212,.04);border:1px solid rgba(6,182,212,.1);display:flex;align-items:center;justify-content:center;font-size:1rem">🩺</div></div></div></div><div class="template-info"><div class="template-type">Healthcare</div><div class="template-name">MedCare Clinic</div><div class="template-desc">Appointment booking and trust elements.</div><div class="template-meta"><span class="template-tag">Business $59</span></div></div></div>
+<div class="tpl-card vis" data-cat="restaurant"><div class="tpl-ov"><button class="tpl-ov-btn" onclick="waOrder('Restaurant')">Order Template →</button></div><div class="tpl-prev" style="background:linear-gradient(135deg,#1a0a00,#2d1500)"><div class="tpl-prev-in"><div class="mbar"><span class="mdot md1"></span><span class="mdot md2"></span><span class="mdot md3"></span></div><div style="height:70px;background:linear-gradient(135deg,rgba(251,146,60,.3),rgba(220,50,50,.2));display:flex;align-items:center;justify-content:center;font-size:1.3rem">🍽️</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:5px;padding:10px"><div style="height:44px;border-radius:5px;background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.12);display:flex;align-items:center;justify-content:center">🍕</div><div style="height:44px;border-radius:5px;background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.12);display:flex;align-items:center;justify-content:center">🍔</div><div style="height:44px;border-radius:5px;background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.12);display:flex;align-items:center;justify-content:center">🍜</div><div style="height:44px;border-radius:5px;background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.12);display:flex;align-items:center;justify-content:center">🥗</div><div style="height:44px;border-radius:5px;background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.12);display:flex;align-items:center;justify-content:center">🍰</div><div style="height:44px;border-radius:5px;background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.12);display:flex;align-items:center;justify-content:center">🥤</div></div></div></div><div class="tpl-info"><div class="tpl-type">Restaurant & Food</div><div class="tpl-name">The Grand Kitchen</div><div class="tpl-desc">Menu showcase with WhatsApp ordering system.</div><div class="tpl-meta"><span class="tpl-tag">Business $59</span></div></div></div>
 
-<div class="template-card visible-template" data-category="fitness"><div class="template-overlay"><button class="overlay-btn" onclick="openWhatsApp('Fitness')">Order Template →</button></div><div class="template-preview" style="background:linear-gradient(135deg,#0a0500,#180a00)"><div class="template-preview-inner"><div style="height:85px;background:linear-gradient(135deg,rgba(239,68,68,.15),rgba(220,38,38,.05));display:flex;align-items:center;justify-content:center;font-size:2rem">💪</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:10px"><div style="height:55px;border-radius:6px;background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.1);display:flex;align-items:center;justify-content:center">🏋️</div><div style="height:55px;border-radius:6px;background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.1);display:flex;align-items:center;justify-content:center">🧘</div><div style="height:55px;border-radius:6px;background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.1);display:flex;align-items:center;justify-content:center">🏃</div></div></div></div><div class="template-info"><div class="template-type">Fitness</div><div class="template-name">FitForce</div><div class="template-desc">Gym with classes and memberships.</div><div class="template-meta"><span class="template-tag">Business $59</span></div></div></div>
+<div class="tpl-card vis" data-cat="ecommerce"><div class="tpl-ov"><button class="tpl-ov-btn" onclick="waOrder('E-Commerce')">Order Template →</button></div><div class="tpl-prev" style="background:linear-gradient(135deg,#0a0a1a,#1a0a2e)"><div class="tpl-prev-in"><div class="mbar"><span class="mdot md1"></span><span class="mdot md2"></span><span class="mdot md3"></span></div><div style="height:28px;background:rgba(99,102,241,.1);display:flex;align-items:center;padding:0 8px"><div style="height:8px;width:8px;border-radius:50%;background:rgba(99,102,241,.5)"></div></div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:5px;padding:8px"><div style="border-radius:5px;background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.1);overflow:hidden"><div style="height:44px;display:flex;align-items:center;justify-content:center;background:rgba(99,102,241,.08)">👗</div><div style="padding:4px"><div style="height:4px;border-radius:2px;background:rgba(255,255,255,.06);margin-bottom:3px"></div><div style="height:4px;width:50%;border-radius:2px;background:rgba(99,102,241,.3)"></div></div></div><div style="border-radius:5px;background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.1);overflow:hidden"><div style="height:44px;display:flex;align-items:center;justify-content:center;background:rgba(99,102,241,.08)">👠</div><div style="padding:4px"><div style="height:4px;border-radius:2px;background:rgba(255,255,255,.06);margin-bottom:3px"></div><div style="height:4px;width:50%;border-radius:2px;background:rgba(99,102,241,.3)"></div></div></div><div style="border-radius:5px;background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.1);overflow:hidden"><div style="height:44px;display:flex;align-items:center;justify-content:center;background:rgba(99,102,241,.08)">👜</div><div style="padding:4px"><div style="height:4px;border-radius:2px;background:rgba(255,255,255,.06);margin-bottom:3px"></div><div style="height:4px;width:50%;border-radius:2px;background:rgba(99,102,241,.3)"></div></div></div></div></div></div><div class="tpl-info"><div class="tpl-type">E-Commerce Store</div><div class="tpl-name">ShopVault</div><div class="tpl-desc">Full online store with WhatsApp checkout.</div><div class="tpl-meta"><span class="tpl-tag">Premium $99</span></div></div></div>
 
-<div class="template-card visible-template" data-category="beauty"><div class="template-overlay"><button class="overlay-btn" onclick="openWhatsApp('Beauty')">Order Template →</button></div><div class="template-preview" style="background:linear-gradient(135deg,#1a0a14,#280a20)"><div class="template-preview-inner"><div style="height:60px;background:linear-gradient(135deg,rgba(236,72,153,.15),rgba(168,85,247,.1));display:flex;align-items:center;justify-content:center;font-size:1.3rem">💄</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:10px"><div style="height:70px;border-radius:8px;background:rgba(236,72,153,.06);border:1px solid rgba(236,72,153,.1);display:flex;align-items:center;justify-content:center;font-size:1.1rem">💅</div><div style="height:70px;border-radius:8px;background:rgba(236,72,153,.06);border:1px solid rgba(236,72,153,.1);display:flex;align-items:center;justify-content:center;font-size:1.1rem">💆</div><div style="height:70px;border-radius:8px;background:rgba(236,72,153,.06);border:1px solid rgba(236,72,153,.1);display:flex;align-items:center;justify-content:center;font-size:1.1rem">✨</div></div></div></div><div class="template-info"><div class="template-type">Beauty</div><div class="template-name">Glam Studio</div><div class="template-desc">Salon with booking and gallery.</div><div class="template-meta"><span class="template-tag">Business $59</span></div></div></div>
+<div class="tpl-card vis" data-cat="agency"><div class="tpl-ov"><button class="tpl-ov-btn" onclick="waOrder('Agency')">Order Template →</button></div><div class="tpl-prev" style="background:linear-gradient(135deg,#050507,#0a0514)"><div class="tpl-prev-in"><div style="height:80px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;background:linear-gradient(135deg,rgba(99,102,241,.1),rgba(139,92,246,.05));padding:10px"><div style="width:65%;height:8px;border-radius:4px;background:rgba(99,102,241,.5)"></div><div style="width:45%;height:6px;border-radius:3px;background:rgba(255,255,255,.08)"></div></div><div style="display:grid;grid-template-columns:repeat(2,1fr);gap:5px;padding:8px"><div style="height:50px;border-radius:5px;border:1px solid rgba(99,102,241,.12);background:rgba(99,102,241,.04);display:flex;align-items:center;justify-content:center">💻</div><div style="height:50px;border-radius:5px;border:1px solid rgba(99,102,241,.12);background:rgba(99,102,241,.04);display:flex;align-items:center;justify-content:center">🎨</div><div style="height:50px;border-radius:5px;border:1px solid rgba(99,102,241,.12);background:rgba(99,102,241,.04);display:flex;align-items:center;justify-content:center">📊</div><div style="height:50px;border-radius:5px;border:1px solid rgba(99,102,241,.12);background:rgba(99,102,241,.04);display:flex;align-items:center;justify-content:center">🚀</div></div></div></div><div class="tpl-info"><div class="tpl-type">Digital Agency</div><div class="tpl-name">Studio Nexus</div><div class="tpl-desc">Services and portfolio showcase.</div><div class="tpl-meta"><span class="tpl-tag">Business $59</span></div></div></div>
 
-<div class="template-card visible-template" data-category="education"><div class="template-overlay"><button class="overlay-btn" onclick="openWhatsApp('Education')">Order Template →</button></div><div class="template-preview" style="background:linear-gradient(135deg,#050a14,#0a1428)"><div class="template-preview-inner"><div style="height:50px;background:rgba(34,197,94,.08);display:flex;align-items:center;padding:0 12px;gap:6px"><div style="font-size:1.1rem">🎓</div><div style="height:8px;width:80px;border-radius:4px;background:rgba(34,197,94,.2)"></div></div><div style="display:grid;grid-template-columns:repeat(2,1fr);gap:6px;padding:10px"><div style="height:70px;border-radius:6px;background:rgba(34,197,94,.04);border:1px solid rgba(34,197,94,.1);display:flex;align-items:center;justify-content:center;font-size:1.2rem">📚</div><div style="height:70px;border-radius:6px;background:rgba(34,197,94,.04);border:1px solid rgba(34,197,94,.1);display:flex;align-items:center;justify-content:center;font-size:1.2rem">🔬</div><div style="height:70px;border-radius:6px;background:rgba(34,197,94,.04);border:1px solid rgba(34,197,94,.1);display:flex;align-items:center;justify-content:center;font-size:1.2rem">💻</div><div style="height:70px;border-radius:6px;background:rgba(34,197,94,.04);border:1px solid rgba(34,197,94,.1);display:flex;align-items:center;justify-content:center;font-size:1.2rem">🎨</div></div></div></div><div class="template-info"><div class="template-type">Education</div><div class="template-name">LearnSphere</div><div class="template-desc">Course catalog and enrollment.</div><div class="template-meta"><span class="template-tag">Business $59</span></div></div></div>
-</div></div></section>
+<div class="tpl-card vis" data-cat="medical"><div class="tpl-ov"><button class="tpl-ov-btn" onclick="waOrder('Medical')">Order Template →</button></div><div class="tpl-prev" style="background:linear-gradient(135deg,#050a1a,#051428)"><div class="tpl-prev-in"><div style="height:44px;background:rgba(6,182,212,.08);display:flex;align-items:center;padding:0 10px;gap:6px"><div style="font-size:.75rem">➕</div><div style="height:7px;width:70px;border-radius:3px;background:rgba(6,182,212,.2)"></div></div><div style="display:grid;grid-template-columns:repeat(2,1fr);gap:5px;padding:8px"><div style="height:58px;border-radius:5px;background:rgba(6,182,212,.04);border:1px solid rgba(6,182,212,.1);display:flex;align-items:center;justify-content:center">👨‍⚕️</div><div style="height:58px;border-radius:5px;background:rgba(6,182,212,.04);border:1px solid rgba(6,182,212,.1);display:flex;align-items:center;justify-content:center">🏥</div><div style="height:58px;border-radius:5px;background:rgba(6,182,212,.04);border:1px solid rgba(6,182,212,.1);display:flex;align-items:center;justify-content:center">💊</div><div style="height:58px;border-radius:5px;background:rgba(6,182,212,.04);border:1px solid rgba(6,182,212,.1);display:flex;align-items:center;justify-content:center">🩺</div></div></div></div><div class="tpl-info"><div class="tpl-type">Healthcare</div><div class="tpl-name">MedCare Clinic</div><div class="tpl-desc">Appointment booking and trust elements.</div><div class="tpl-meta"><span class="tpl-tag">Business $59</span></div></div></div>
 
-<section class="process-section" id="process"><div class="section-container">
-<div class="section-header reveal"><div class="section-label">Process</div><h2 class="section-title">Vision to Launch</h2></div>
-<div class="timeline">
-<div class="timeline-item"><div class="timeline-marker"><div class="timeline-dot"></div><div class="timeline-step">01</div></div><div class="timeline-content"><h3 class="timeline-title">Discovery</h3><p class="timeline-desc">We understand your business and goals.</p><div class="timeline-duration">⏱ 1–2 Days</div></div></div>
-<div class="timeline-item"><div class="timeline-marker"><div class="timeline-dot"></div><div class="timeline-step">02</div></div><div class="timeline-content"><h3 class="timeline-title">Design</h3><p class="timeline-desc">Premium mockups for your brand.</p><div class="timeline-duration">⏱ 2–3 Days</div></div></div>
-<div class="timeline-item"><div class="timeline-marker"><div class="timeline-dot"></div><div class="timeline-step">03</div></div><div class="timeline-content"><h3 class="timeline-title">Development</h3><p class="timeline-desc">Build with modern frameworks.</p><div class="timeline-duration">⏱ 3–7 Days</div></div></div>
-<div class="timeline-item"><div class="timeline-marker"><div class="timeline-dot"></div><div class="timeline-step">04</div></div><div class="timeline-content"><h3 class="timeline-title">Launch</h3><p class="timeline-desc">Deploy and ongoing support.</p><div class="timeline-duration">⏱ Ongoing</div></div></div>
-</div></div></section>
+<div class="tpl-card vis" data-cat="fitness"><div class="tpl-ov"><button class="tpl-ov-btn" onclick="waOrder('Fitness')">Order Template →</button></div><div class="tpl-prev" style="background:linear-gradient(135deg,#0a0500,#180a00)"><div class="tpl-prev-in"><div style="height:75px;background:linear-gradient(135deg,rgba(239,68,68,.15),rgba(220,38,38,.05));display:flex;align-items:center;justify-content:center;font-size:1.8rem">💪</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:5px;padding:8px"><div style="height:48px;border-radius:5px;background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.1);display:flex;align-items:center;justify-content:center">🏋️</div><div style="height:48px;border-radius:5px;background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.1);display:flex;align-items:center;justify-content:center">🧘</div><div style="height:48px;border-radius:5px;background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.1);display:flex;align-items:center;justify-content:center">🏃</div></div></div></div><div class="tpl-info"><div class="tpl-type">Gym & Fitness</div><div class="tpl-name">FitForce Studio</div><div class="tpl-desc">Class schedules and membership plans.</div><div class="tpl-meta"><span class="tpl-tag">Business $59</span></div></div></div>
 
-<section class="stats-section"><div class="section-container">
-<div class="section-header reveal"><div class="section-label">Results</div><h2 class="section-title">Numbers That Matter</h2></div>
-<div class="stats-grid">
-<div class="stat-card reveal"><div class="stat-number" data-target="200">0</div><div class="stat-label">Projects</div><div class="stat-sublabel">15+ industries</div></div>
-<div class="stat-card reveal"><div class="stat-number" data-target="98">0</div><div class="stat-label">Satisfaction</div><div class="stat-sublabel">Client reviews</div></div>
-<div class="stat-card reveal"><div class="stat-number" data-target="50">0</div><div class="stat-label">Active Clients</div><div class="stat-sublabel">Worldwide</div></div>
-<div class="stat-card reveal"><div class="stat-number" data-target="40">0</div><div class="stat-label">Team Members</div><div class="stat-sublabel">Experts</div></div>
-</div></div></section>
+<div class="tpl-card vis" data-cat="beauty"><div class="tpl-ov"><button class="tpl-ov-btn" onclick="waOrder('Beauty')">Order Template →</button></div><div class="tpl-prev" style="background:linear-gradient(135deg,#1a0a14,#280a20)"><div class="tpl-prev-in"><div style="height:52px;background:linear-gradient(135deg,rgba(236,72,153,.15),rgba(168,85,247,.1));display:flex;align-items:center;justify-content:center;font-size:1.2rem">💄</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:5px;padding:8px"><div style="height:60px;border-radius:6px;background:rgba(236,72,153,.06);border:1px solid rgba(236,72,153,.1);display:flex;align-items:center;justify-content:center">💅</div><div style="height:60px;border-radius:6px;background:rgba(236,72,153,.06);border:1px solid rgba(236,72,153,.1);display:flex;align-items:center;justify-content:center">💆</div><div style="height:60px;border-radius:6px;background:rgba(236,72,153,.06);border:1px solid rgba(236,72,153,.1);display:flex;align-items:center;justify-content:center">✨</div></div></div></div><div class="tpl-info"><div class="tpl-type">Beauty & Salon</div><div class="tpl-name">Glam Studio</div><div class="tpl-desc">Salon with booking and gallery.</div><div class="tpl-meta"><span class="tpl-tag">Business $59</span></div></div></div>
 
-<section class="testimonials-section"><div class="section-container">
-<div class="section-header reveal"><div class="section-label">Reviews</div><h2 class="section-title">Client Feedback</h2></div>
-<div class="testimonials-grid">
-<div class="testimonial-card reveal"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"Built our restaurant website in 5 days. Orders up 200%!"</p><div class="testimonial-author"><div class="testimonial-avatar">AM</div><div><div class="testimonial-name">Ahmed M.</div><div class="testimonial-role">Restaurant Owner</div></div></div></div>
-<div class="testimonial-card reveal"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"AI chatbot changed our salon. Clients book automatically!"</p><div class="testimonial-author"><div class="testimonial-avatar">LK</div><div><div class="testimonial-name">Layla K.</div><div class="testimonial-role">Salon Founder</div></div></div></div>
-<div class="testimonial-card reveal"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"$29 basic package exceeded all expectations. Amazing quality."</p><div class="testimonial-author"><div class="testimonial-avatar">JR</div><div><div class="testimonial-name">James R.</div><div class="testimonial-role">Consultant</div></div></div></div>
-</div></div></section>
+<div class="tpl-card vis" data-cat="education"><div class="tpl-ov"><button class="tpl-ov-btn" onclick="waOrder('Education')">Order Template →</button></div><div class="tpl-prev" style="background:linear-gradient(135deg,#050a14,#0a1428)"><div class="tpl-prev-in"><div style="height:44px;background:rgba(34,197,94,.08);display:flex;align-items:center;padding:0 10px;gap:5px"><div style="font-size:1rem">🎓</div><div style="height:7px;width:70px;border-radius:3px;background:rgba(34,197,94,.2)"></div></div><div style="display:grid;grid-template-columns:repeat(2,1fr);gap:5px;padding:8px"><div style="height:62px;border-radius:5px;background:rgba(34,197,94,.04);border:1px solid rgba(34,197,94,.1);display:flex;align-items:center;justify-content:center;font-size:1.1rem">📚</div><div style="height:62px;border-radius:5px;background:rgba(34,197,94,.04);border:1px solid rgba(34,197,94,.1);display:flex;align-items:center;justify-content:center;font-size:1.1rem">🔬</div><div style="height:62px;border-radius:5px;background:rgba(34,197,94,.04);border:1px solid rgba(34,197,94,.1);display:flex;align-items:center;justify-content:center;font-size:1.1rem">💻</div><div style="height:62px;border-radius:5px;background:rgba(34,197,94,.04);border:1px solid rgba(34,197,94,.1);display:flex;align-items:center;justify-content:center;font-size:1.1rem">🎨</div></div></div></div><div class="tpl-info"><div class="tpl-type">Education</div><div class="tpl-name">LearnSphere</div><div class="tpl-desc">Course catalog and enrollment.</div><div class="tpl-meta"><span class="tpl-tag">Business $59</span></div></div></div>
 
-<section class="pricing-section" id="pricing"><div class="section-container">
-<div class="section-header reveal"><div class="section-label">Packages</div><h2 class="section-title">Website Packages</h2><p class="section-desc">Transparent pricing. No hidden fees.</p></div>
-<div class="pricing-grid">
-<div class="pricing-card reveal"><div class="pricing-medal">🥉</div><div class="pricing-name">Basic</div><div class="pricing-desc">For small businesses and personal brands.</div><div class="pricing-price"><span class="pricing-currency">$</span><span class="pricing-amount">29</span></div><div class="pricing-divider"></div><div class="pricing-features-title">Features</div><ul class="pricing-features"><li>Modern clean design</li><li>Mobile responsive</li><li>Up to 3 pages</li><li>Contact form</li><li>WhatsApp button</li><li>Fast loading</li><li>Basic SEO</li><li>Social media links</li></ul><div class="pricing-best-for"><div class="pricing-best-for-label">Best For</div><div class="pricing-best-for-text">Small businesses, freelancers, portfolios.</div></div><a href="#contact" class="btn-pricing btn-pricing-outline">Get Started</a></div>
+</div>
+</div>
+</section>
 
-<div class="pricing-card featured reveal"><div class="pricing-popular">Most Popular</div><div class="pricing-medal">🥈</div><div class="pricing-name">Business</div><div class="pricing-desc">Complete business solution.</div><div class="pricing-price"><span class="pricing-currency">$</span><span class="pricing-amount">59</span></div><div class="pricing-divider"></div><div class="pricing-features-title">Features</div><ul class="pricing-features"><li>Everything in Basic</li><li>Up to 5 pages</li><li>Premium UI/UX</li><li>Animations & transitions</li><li>Service showcase</li><li>Advanced forms</li><li>Google Maps</li><li>Enhanced SEO</li><li>Professional layout</li></ul><div class="pricing-best-for"><div class="pricing-best-for-label">Best For</div><div class="pricing-best-for-text">Restaurants, salons, agencies, gyms.</div></div><a href="#contact" class="btn-pricing btn-pricing-primary">Get Started</a></div>
+<!-- PROCESS -->
+<section class="proc" id="process">
+<div class="sc">
+<div class="sh rv"><div class="sl">Process</div><h2 class="st">Vision to Launch in Days</h2><p class="sd">Refined across 200+ projects.</p></div>
+<div class="tl-wrap">
+<div class="tl-item"><div class="tl-marker"><div class="tl-dot"></div><div class="tl-step">01</div></div><div class="tl-content"><h3 class="tl-title">Discovery & Strategy</h3><p class="tl-desc">We understand your business, audience, and goals.</p><div class="tl-dur">⏱ 1–2 Days</div></div></div>
+<div class="tl-item"><div class="tl-marker"><div class="tl-dot"></div><div class="tl-step">02</div></div><div class="tl-content"><h3 class="tl-title">Design & Prototype</h3><p class="tl-desc">Premium mockups designed for your brand.</p><div class="tl-dur">⏱ 2–3 Days</div></div></div>
+<div class="tl-item"><div class="tl-marker"><div class="tl-dot"></div><div class="tl-step">03</div></div><div class="tl-content"><h3 class="tl-title">Development</h3><p class="tl-desc">Built with modern frameworks and all features.</p><div class="tl-dur">⏱ 3–7 Days</div></div></div>
+<div class="tl-item"><div class="tl-marker"><div class="tl-dot"></div><div class="tl-step">04</div></div><div class="tl-content"><h3 class="tl-title">Launch & Support</h3><p class="tl-desc">Deploy live with ongoing support.</p><div class="tl-dur">⏱ Ongoing</div></div></div>
+</div>
+</div>
+</section>
 
-<div class="pricing-card reveal"><div class="pricing-medal">🥇</div><div class="pricing-name">Premium</div><div class="pricing-desc">Advanced with AI and 3D effects.</div><div class="pricing-price"><span class="pricing-currency">$</span><span class="pricing-amount">99</span></div><div class="pricing-divider"></div><div class="pricing-features-title">Features</div><ul class="pricing-features"><li>Everything in Business</li><li>AI Chatbot</li><li>2D & 3D effects</li><li>Full animations</li><li>Custom premium design</li><li>Interactive UX</li><li>WhatsApp ordering</li><li>Performance optimized</li><li>Premium sections</li><li>Priority support</li></ul><div class="pricing-best-for"><div class="pricing-best-for-label">Best For</div><div class="pricing-best-for-text">Brands, e-commerce, high-end businesses.</div></div><a href="#contact" class="btn-pricing btn-pricing-outline">Get Started</a></div>
-</div></div></section>
+<!-- STATS -->
+<section class="stats">
+<div class="sc">
+<div class="sh rv"><div class="sl">Track Record</div><h2 class="st">Numbers That Matter</h2></div>
+<div class="stats-g">
+<div class="stat-c rv"><div class="stat-n" data-t="200">0</div><div class="stat-l">Projects</div><div class="stat-sl">15+ industries</div></div>
+<div class="stat-c rv"><div class="stat-n" data-t="98">0</div><div class="stat-l">Satisfaction</div><div class="stat-sl">Client reviews</div></div>
+<div class="stat-c rv"><div class="stat-n" data-t="50">0</div><div class="stat-l">Active Clients</div><div class="stat-sl">Worldwide</div></div>
+<div class="stat-c rv"><div class="stat-n" data-t="40">0</div><div class="stat-l">Team Members</div><div class="stat-sl">Experts</div></div>
+</div>
+</div>
+</section>
 
-<section class="why-section"><div class="section-container">
-<div class="section-header reveal"><div class="section-label">Why Us</div><h2 class="section-title">Why Choose NEXORA?</h2></div>
-<div class="why-grid reveal">
-<div class="why-item"><span>✅</span><span class="why-text">Professional UI/UX</span></div>
-<div class="why-item"><span>✅</span><span class="why-text">Mobile-Friendly</span></div>
-<div class="why-item"><span>✅</span><span class="why-text">Fast Performance</span></div>
-<div class="why-item"><span>✅</span><span class="why-text">AI Integration</span></div>
-<div class="why-item"><span>✅</span><span class="why-text">2D & 3D Effects</span></div>
-<div class="why-item"><span>✅</span><span class="why-text">Modern Animations</span></div>
-<div class="why-item"><span>✅</span><span class="why-text">WhatsApp Orders</span></div>
-<div class="why-item"><span>✅</span><span class="why-text">Affordable Pricing</span></div>
-<div class="why-item"><span>✅</span><span class="why-text">Dedicated Support</span></div>
-</div></div></section>
+<!-- TESTIMONIALS -->
+<section class="test">
+<div class="sc">
+<div class="sh rv"><div class="sl">Reviews</div><h2 class="st">Client Feedback</h2></div>
+<div class="test-g">
+<div class="test-c rv"><div class="test-stars">★★★★★</div><p class="test-txt">"Built our restaurant website in 5 days. Online orders increased 200% in the first month!"</p><div class="test-auth"><div class="test-av">AM</div><div><div class="test-name">Ahmed M.</div><div class="test-role">Restaurant Owner</div></div></div></div>
+<div class="test-c rv"><div class="test-stars">★★★★★</div><p class="test-txt">"The AI chatbot changed everything for our salon. Clients book automatically through WhatsApp!"</p><div class="test-auth"><div class="test-av">LK</div><div><div class="test-name">Layla K.</div><div class="test-role">Salon Founder</div></div></div></div>
+<div class="test-c rv"><div class="test-stars">★★★★★</div><p class="test-txt">"Started with the $29 basic package and the quality exceeded all expectations. Amazing!"</p><div class="test-auth"><div class="test-av">JR</div><div><div class="test-name">James R.</div><div class="test-role">Consultant</div></div></div></div>
+</div>
+</div>
+</section>
 
-<section class="faq-section" id="faq"><div class="section-container">
-<div class="section-header reveal"><div class="section-label">FAQ</div><h2 class="section-title">Common Questions</h2></div>
+<!-- PRICING -->
+<section class="price" id="pricing">
+<div class="sc">
+<div class="sh rv"><div class="sl">Packages</div><h2 class="st">Website Packages</h2><p class="sd">Transparent pricing. No hidden fees.</p></div>
+<div class="price-g">
+<div class="price-c rv"><div class="price-medal">🥉</div><div class="price-name">Basic Website</div><div class="price-desc">For small businesses and personal brands.</div><div class="price-pr"><span class="price-cur">$</span><span class="price-amt">29</span></div><div class="price-div"></div><div class="price-ft">Included Features</div><ul class="price-fl"><li>Modern clean design</li><li>Mobile & tablet responsive</li><li>Up to 3 pages</li><li>Contact form</li><li>Direct WhatsApp button</li><li>Fast loading speed</li><li>Basic SEO setup</li><li>Social media integration</li></ul><div class="price-bf"><div class="price-bfl">Best For</div><div class="price-bft">Small businesses, local stores, freelancers, portfolios.</div></div><a href="#contact" class="btn-price btn-po">Get Started</a></div>
+
+<div class="price-c feat rv"><div class="price-pop">Most Popular</div><div class="price-medal">🥈</div><div class="price-name">Business Website</div><div class="price-desc">Complete solution for growing businesses.</div><div class="price-pr"><span class="price-cur">$</span><span class="price-amt">59</span></div><div class="price-div"></div><div class="price-ft">Included Features</div><ul class="price-fl"><li>Everything in Basic</li><li>Up to 5 pages</li><li>Premium UI/UX design</li><li>Smooth animations</li><li>Service & product showcase</li><li>Advanced contact forms</li><li>Google Maps integration</li><li>Enhanced SEO</li><li>Professional layout</li></ul><div class="price-bf"><div class="price-bfl">Best For</div><div class="price-bft">Restaurants, shops, agencies, gyms, salons.</div></div><a href="#contact" class="btn-price btn-pp">Get Started</a></div>
+
+<div class="price-c rv"><div class="price-medal">🥇</div><div class="price-name">Premium Website</div><div class="price-desc">Advanced with AI and interactive features.</div><div class="price-pr"><span class="price-cur">$</span><span class="price-amt">99</span></div><div class="price-div"></div><div class="price-ft">Included Features</div><ul class="price-fl"><li>Everything in Business</li><li>AI Chatbot integration</li><li>Advanced 2D & 3D effects</li><li>Full website animations</li><li>Custom premium design</li><li>Interactive UX</li><li>WhatsApp ordering system</li><li>Performance optimization</li><li>Premium landing sections</li><li>Priority support</li></ul><div class="price-bf"><div class="price-bfl">Best For</div><div class="price-bft">Brands, e-commerce, high-end businesses.</div></div><a href="#contact" class="btn-price btn-po">Get Started</a></div>
+</div>
+</div>
+</section>
+
+<!-- WHY -->
+<section class="why">
+<div class="sc">
+<div class="sh rv"><div class="sl">Why Nexora</div><h2 class="st">Why Choose NEXORA?</h2></div>
+<div class="why-g rv">
+<div class="why-i"><span>✅</span><span class="why-t">Professional UI/UX</span></div>
+<div class="why-i"><span>✅</span><span class="why-t">Mobile-Friendly</span></div>
+<div class="why-i"><span>✅</span><span class="why-t">Fast Performance</span></div>
+<div class="why-i"><span>✅</span><span class="why-t">AI Integration</span></div>
+<div class="why-i"><span>✅</span><span class="why-t">2D & 3D Effects</span></div>
+<div class="why-i"><span>✅</span><span class="why-t">Modern Animations</span></div>
+<div class="why-i"><span>✅</span><span class="why-t">WhatsApp Orders</span></div>
+<div class="why-i"><span>✅</span><span class="why-t">Affordable Pricing</span></div>
+<div class="why-i"><span>✅</span><span class="why-t">Dedicated Support</span></div>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+<div class="sc">
+<div class="sh rv"><div class="sl">FAQ</div><h2 class="st">Common Questions</h2></div>
 <div class="faq-list">
-<div class="faq-item reveal"><button class="faq-question" onclick="toggleFAQ(this)">How long does it take?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Basic: 3–5 days. Business: 5–7 days. Premium: 7–10 days.</div></div></div>
-<div class="faq-item reveal"><button class="faq-question" onclick="toggleFAQ(this)">Are there monthly fees?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">No. All packages are one-time payments.</div></div></div>
-<div class="faq-item reveal"><button class="faq-question" onclick="toggleFAQ(this)">Can I upgrade later?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes, pay only the difference between packages.</div></div></div>
-<div class="faq-item reveal"><button class="faq-question" onclick="toggleFAQ(this)">Will it work on mobile?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Every site is fully responsive on all devices.</div></div></div>
-</div></div></section>
+<div class="faq-i rv"><button class="faq-q" onclick="togFaq(this)">How long does it take to build?<span class="faq-ic">+</span></button><div class="faq-a"><div class="faq-ai">Basic: 3–5 days. Business: 5–7 days. Premium: 7–10 days. Rush delivery available.</div></div></div>
+<div class="faq-i rv"><button class="faq-q" onclick="togFaq(this)">Are there monthly fees?<span class="faq-ic">+</span></button><div class="faq-a"><div class="faq-ai">No! All packages are one-time payments. Only domain/hosting are separate.</div></div></div>
+<div class="faq-i rv"><button class="faq-q" onclick="togFaq(this)">Can I upgrade my package later?<span class="faq-ic">+</span></button><div class="faq-a"><div class="faq-ai">Yes! You only pay the difference between packages.</div></div></div>
+<div class="faq-i rv"><button class="faq-q" onclick="togFaq(this)">How does WhatsApp ordering work?<span class="faq-ic">+</span></button><div class="faq-a"><div class="faq-ai">Customers click to order and connect to your WhatsApp with pre-filled messages instantly.</div></div></div>
+<div class="faq-i rv"><button class="faq-q" onclick="togFaq(this)">Will my site work on mobile?<span class="faq-ic">+</span></button><div class="faq-a"><div class="faq-ai">Every website is fully responsive and tested on all devices and browsers.</div></div></div>
+</div>
+</div>
+</section>
 
-<section class="contact-section" id="contact"><div class="section-container">
-<div class="section-header reveal"><div class="section-label">Contact</div><h2 class="section-title">Start Your Project</h2></div>
-<div class="contact-grid">
-<div class="contact-info reveal">
-<h3 class="contact-info-title">Let's build your website.</h3>
-<p class="contact-info-desc">From $29 landing pages to $99 AI platforms.</p>
-<div class="contact-channels">
-<a href="https://wa.me/1234567890" class="contact-channel" target="_blank"><div class="contact-channel-icon cci-whatsapp">💬</div><div><span class="contact-channel-label">WhatsApp</span><span class="contact-channel-value">Chat instantly</span></div></a>
-<a href="mailto:hello@nexora.agency" class="contact-channel"><div class="contact-channel-icon cci-email">✉️</div><div><span class="contact-channel-label">Email</span><span class="contact-channel-value">hello@nexora.agency</span></div></a>
-</div></div>
-<div class="contact-form-container reveal">
-<form onsubmit="handleSubmit(event)">
-<div class="form-row"><div class="form-group"><label class="form-label">Name</label><input type="text" class="form-input" placeholder="John Smith" required></div><div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input" placeholder="john@company.com" required></div></div>
-<div class="form-row"><div class="form-group"><label class="form-label">WhatsApp</label><input type="tel" class="form-input" placeholder="+1 555 123 4567"></div><div class="form-group"><label class="form-label">Package</label><select class="form-select"><option>Select</option><option>🥉 Basic $29</option><option>🥈 Business $59</option><option>🥇 Premium $99</option></select></div></div>
-<div class="form-group full" style="margin-bottom:16px"><label class="form-label">Details</label><textarea class="form-textarea" placeholder="Tell us about your project..." rows="4"></textarea></div>
-<button type="submit" class="btn-submit">Send Inquiry →</button>
-</form></div>
-</div></div></section>
+<!-- CONTACT -->
+<section class="contact" id="contact">
+<div class="sc">
+<div class="sh rv"><div class="sl">Contact</div><h2 class="st">Start Your Project</h2><p class="sd">We respond within 24 hours.</p></div>
+<div class="contact-g">
+<div class="contact-info rv">
+<h3 class="ci-t">Let's build your dream website.</h3>
+<p class="ci-d">From $29 landing pages to $99 AI-powered platforms — we deliver exceptional results.</p>
+<div class="ci-chs">
+<a href="https://wa.me/1234567890" class="ci-ch" target="_blank" rel="noopener"><div class="ci-ch-i" style="background:rgba(37,211,102,.12)">💬</div><div><div class="ci-ch-l">WhatsApp</div><div class="ci-ch-v">Chat instantly</div></div></a>
+<a href="mailto:hello@nexora.agency" class="ci-ch"><div class="ci-ch-i" style="background:rgba(99,102,241,.12)">✉️</div><div><div class="ci-ch-l">Email</div><div class="ci-ch-v">hello@nexora.agency</div></div></a>
+<a href="tel:+1234567890" class="ci-ch"><div class="ci-ch-i" style="background:rgba(6,182,212,.12)">📞</div><div><div class="ci-ch-l">Call</div><div class="ci-ch-v">Free consultation</div></div></a>
+</div>
+</div>
+<div class="cf-wrap rv">
+<form id="cForm" onsubmit="subForm(event)">
+<div class="fr"><div class="fg"><label class="fl">Full Name</label><input type="text" class="fi" placeholder="John Smith" required></div><div class="fg"><label class="fl">Email</label><input type="email" class="fi" placeholder="john@company.com" required></div></div>
+<div class="fr"><div class="fg"><label class="fl">WhatsApp</label><input type="tel" class="fi" placeholder="+1 555 123 4567"></div><div class="fg"><label class="fl">Package</label><select class="fsel"><option value="">Select package</option><option>🥉 Basic — $29</option><option>🥈 Business — $59</option><option>🥇 Premium — $99</option><option>Custom</option></select></div></div>
+<div class="fr"><div class="fg"><label class="fl">Industry</label><select class="fsel"><option value="">Select industry</option><option>Restaurant</option><option>E-Commerce</option><option>Beauty</option><option>Healthcare</option><option>Real Estate</option><option>Fitness</option><option>Education</option><option>Agency</option><option>Technology</option><option>Other</option></select></div><div class="fg"><label class="fl">Timeline</label><select class="fsel"><option value="">When needed?</option><option>ASAP</option><option>1 week</option><option>2 weeks</option><option>This month</option><option>Flexible</option></select></div></div>
+<div class="fg full" style="margin-bottom:14px"><label class="fl">Project Details</label><textarea class="fta" placeholder="Tell us about your business..." rows="4"></textarea></div>
+<button type="submit" class="btn-sub">Send Project Inquiry →</button>
+</form>
+</div>
+</div>
+</div>
+</section>
 
-<section class="cta-section"><div class="section-container">
+<!-- CTA -->
+<section class="cta">
+<div class="sc">
 <div class="cta-glow"></div>
-<h2 class="cta-title reveal">Build Your <span class="gradient-text">Digital Presence</span></h2>
-<p class="cta-desc reveal">Professional websites from $29.</p>
-<div class="cta-actions reveal">
-<a href="#contact" class="btn-hero-primary">Get Started →</a>
-<a href="https://wa.me/1234567890" class="btn-hero-secondary" target="_blank">💬 WhatsApp Us</a>
+<h2 class="cta-t rv">Build Your <span class="grad">Digital Presence</span></h2>
+<p class="cta-d rv">Professional websites from $29. Join 200+ businesses.</p>
+<div class="cta-acts rv">
+<a href="#contact" class="btn-hp">Get Started — From $29 →</a>
+<a href="https://wa.me/1234567890" class="btn-hs" target="_blank" rel="noopener">💬 WhatsApp Us</a>
 </div>
-<div class="cta-scarcity reveal"><span class="scarcity-dot"></span><span>3 slots left this month</span></div>
-</div></section>
+<div class="cta-sc rv"><span class="sc-dot"></span><span>Only 3 slots left this month</span></div>
+</div>
+</section>
 
-<footer class="footer"><div class="section-container">
-<div class="footer-grid">
-<div><div class="footer-brand-logo"><img src="https://i.imgur.com/XRLsmbg.jpeg" class="footer-logo-img"><span class="footer-brand-name-text">NEXORA</span></div><p class="footer-brand-desc">Premium web development at affordable prices.</p><p class="footer-tagline">Building Modern Digital Experiences.</p></div>
-<div><div class="footer-column-title">Services</div><ul class="footer-links"><li><a href="#services">Web Dev</a></li><li><a href="#services">AI Solutions</a></li><li><a href="#services">E-Commerce</a></li><li><a href="#services">Design</a></li></ul></div>
-<div><div class="footer-column-title">Packages</div><ul class="footer-links"><li><a href="#pricing">Basic $29</a></li><li><a href="#pricing">Business $59</a></li><li><a href="#pricing">Premium $99</a></li></ul></div>
-<div><div class="footer-column-title">Connect</div><ul class="footer-links"><li><a href="#contact">Contact</a></li><li><a href="https://wa.me/1234567890">WhatsApp</a></li><li><a href="mailto:hello@nexora.agency">Email</a></li></ul></div>
+<!-- FOOTER -->
+<footer class="foot">
+<div class="sc">
+<div class="foot-g">
+<div><div class="foot-logo"><img src="https://i.imgur.com/XRLsmbg.jpeg" alt="NEXORA"><span>NEXORA</span></div><p class="foot-desc">Premium digital agency — web development, AI solutions, and e-commerce at affordable prices.</p><p class="foot-tag">Building Modern Digital Experiences.</p></div>
+<div><div class="foot-ct">Services</div><ul class="foot-links"><li><a href="#services">Web Development</a></li><li><a href="#services">AI Solutions</a></li><li><a href="#services">E-Commerce</a></li><li><a href="#services">UI/UX Design</a></li></ul></div>
+<div><div class="foot-ct">Packages</div><ul class="foot-links"><li><a href="#pricing">🥉 Basic — $29</a></li><li><a href="#pricing">🥈 Business — $59</a></li><li><a href="#pricing">🥇 Premium — $99</a></li></ul></div>
+<div><div class="foot-ct">Connect</div><ul class="foot-links"><li><a href="#contact">Contact Us</a></li><li><a href="https://wa.me/1234567890" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:hello@nexora.agency">Email</a></li><li><a href="#faq">FAQ</a></li></ul></div>
 </div>
-<div class="footer-bottom"><div class="footer-copyright">© 2025 NEXORA</div><div class="footer-socials"><a href="#" class="footer-social">𝕏</a><a href="#" class="footer-social">in</a><a href="#" class="footer-social">📷</a></div></div>
-</div></footer>
+<div class="foot-bot"><div class="foot-copy">© 2025 NEXORA. All rights reserved.</div><div class="foot-soc"><a href="#" aria-label="Twitter">𝕏</a><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="Instagram">📷</a></div></div>
+</div>
+</footer>
 
-<a href="https://wa.me/1234567890" class="whatsapp-float" target="_blank">💬</a>
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/1234567890" class="wa" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
 
-<!-- SECRET ADMIN PANEL -->
-<div id="secretOverlay">
-<div id="passwordScreen" style="text-align:center;max-width:420px;width:90%;padding:48px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:24px;margin:auto">
-<div style="width:60px;height:60px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin:0 auto 24px">🔐</div>
-<h2 style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;margin-bottom:8px">Admin Access</h2>
-<p style="font-size:.85rem;color:rgba(245,245,247,.5);margin-bottom:32px">Enter password to access prompt library</p>
-<input type="password" id="passwordInput" placeholder="Enter password..." style="width:100%;padding:14px 18px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;color:#f5f5f7;font-size:.95rem;font-family:'Inter',sans-serif;outline:none;margin-bottom:12px" onkeydown="if(event.key==='Enter')checkPassword()">
-<div id="passwordError" style="color:#ef4444;font-size:.8rem;margin-bottom:12px;display:none">❌ Wrong password</div>
-<button onclick="checkPassword()" style="width:100%;padding:14px;background:linear-gradient(135deg,#6366f1,#8b5cf6);color:white;border:none;border-radius:12px;font-size:.95rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif">Unlock →</button>
-<button onclick="closeSecret()" style="width:100%;padding:12px;background:transparent;color:rgba(245,245,247,.4);border:none;font-size:.85rem;cursor:pointer;font-family:'Inter',sans-serif;margin-top:8px">✕ Close</button>
+<!-- SECRET PANEL -->
+<div id="secOv">
+<div id="pwScreen" class="pw-box">
+<div class="pw-ic">🔐</div>
+<h2 class="pw-t">Admin Access</h2>
+<p class="pw-s">Enter password to access prompt library</p>
+<input type="password" id="pwInp" class="pw-inp" placeholder="Enter password..." autocomplete="off">
+<div id="pwErr" class="pw-err">❌ Wrong password. Try again.</div>
+<button onclick="checkPw()" class="pw-btn">Unlock →</button>
+<button onclick="closeSec()" class="pw-close">✕ Close</button>
 </div>
-
-<div id="adminPanel" style="display:none;max-width:1100px;margin:0 auto;padding:40px 24px">
-<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:40px;flex-wrap:wrap;gap:16px">
-<div style="display:flex;align-items:center;gap:14px">
-<img src="https://i.imgur.com/XRLsmbg.jpeg" style="width:44px;height:44px;border-radius:12px">
-<div><div style="font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:700">NEXORA Prompt Library</div><div style="font-size:.75rem;color:rgba(245,245,247,.4)">Copy prompts → Paste to AI → Fill details → Get website</div></div>
+<div id="adminPanel" class="admin-panel" style="display:none">
+<div class="admin-head">
+<div class="admin-logo"><img src="https://i.imgur.com/XRLsmbg.jpeg" alt="N"><div><div class="admin-logo-t">NEXORA Prompt Library</div><div class="admin-logo-s">Copy prompts → Paste to AI → Fill details → Get website</div></div></div>
+<button onclick="closeSec()" class="admin-close">✕ Close Panel</button>
 </div>
-<button onclick="closeSecret()" style="padding:10px 20px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:rgba(245,245,247,.7);font-size:.85rem;cursor:pointer;font-family:'Inter',sans-serif">✕ Close Panel</button>
-</div>
-
-<div style="padding:16px 20px;background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.15);border-radius:12px;margin-bottom:32px;font-size:.82rem;color:rgba(245,245,247,.6);line-height:1.7">
-📋 <strong style="color:#818cf8">How to use:</strong> Click "Copy Prompt" → Paste into ChatGPT/Claude → Replace <strong style="color:#818cf8">[BUSINESS NAME]</strong>, <strong style="color:#818cf8">[PHONE NUMBER]</strong>, <strong style="color:#818cf8">[LOGO URL]</strong> → AI generates the complete website.
-</div>
-
-<div id="promptsContainer"></div>
+<div class="admin-info">📋 <strong style="color:#818cf8">How to use:</strong> Click "Copy Prompt" → Paste into ChatGPT or Claude → Replace <strong style="color:#818cf8">[BUSINESS NAME]</strong>, <strong style="color:#818cf8">[PHONE NUMBER]</strong>, and <strong style="color:#818cf8">[LOGO URL]</strong> → AI generates a complete website.</div>
+<div id="promptsBox"></div>
 </div>
 </div>
-
-<div id="copyToast">✓ Prompt copied to clipboard!</div>
+<div id="cpToast">✓ Prompt copied to clipboard!</div>
 
 <script>
-// LOADER
-window.addEventListener('load',()=>{setTimeout(()=>{document.getElementById('loader').classList.add('hidden')},2200)});
-
-// CURSOR
-const cursor=document.getElementById('cursorFollower'),dotEl=document.getElementById('cursorDot'),glowEl=document.getElementById('mouseGlow');
-let mx=0,my=0,cx=0,cy=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dotEl.style.left=mx+'px';dotEl.style.top=my+'px';glowEl.style.left=mx+'px';glowEl.style.top=my+'px'});
-(function animC(){cx+=(mx-cx)*.12;cy+=(my-cy)*.12;cursor.style.left=cx+'px';cursor.style.top=cy+'px';requestAnimationFrame(animC)})();
-
-// PARTICLES
-const pc=document.getElementById('particles');for(let i=0;i<35;i++){const p=document.createElement('div');p.className='particle';p.style.left=Math.random()*100+'%';p.style.animationDuration=(8+Math.random()*12)+'s';p.style.animationDelay=Math.random()*10+'s';const s=(1+Math.random()*2)+'px';p.style.width=s;p.style.height=s;pc.appendChild(p)}
-
-// NAV
-window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50)});
-document.getElementById('mobileToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('mobile-open')});
-document.querySelectorAll('.nav-links a').forEach(l=>{l.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('mobile-open')})});
-
-// REVEAL
-const ro=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
-document.querySelectorAll('.reveal,.timeline-item').forEach(el=>ro.observe(el));
-
-// COUNTERS
-const co=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting){animCount(en.target,parseInt(en.target.dataset.target));co.unobserve(en.target)}})},{threshold:.5});
-document.querySelectorAll('.stat-number[data-target]').forEach(el=>co.observe(el));
-function animCount(el,t){let c=0;const inc=t/60,s=t===98?'%':'+';(function u(){c+=inc;if(c>=t){el.textContent=t+s;return}el.textContent=Math.floor(c)+s;requestAnimationFrame(u)})()}
-
-// TEMPLATE FILTER
-document.querySelectorAll('.template-tab').forEach(tab=>{tab.addEventListener('click',()=>{document.querySelectorAll('.template-tab').forEach(t=>t.classList.remove('active'));tab.classList.add('active');const f=tab.dataset.filter;document.querySelectorAll('.template-card').forEach(c=>{c.classList.toggle('visible-template',f==='all'||c.dataset.category===f)})})});
-
-// TEMPLATE 3D
-document.querySelectorAll('.template-card').forEach(c=>{c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),rx=(e.clientY-r.top-r.height/2)/(r.height/2)*-5,ry=(e.clientX-r.left-r.width/2)/(r.width/2)*5;c.style.transform=`perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-8px)`});c.addEventListener('mouseleave',()=>{c.style.transform=''})});
-
-// FAQ
-function toggleFAQ(b){const i=b.parentElement,a=i.querySelector('.faq-answer'),o=i.classList.contains('open');document.querySelectorAll('.faq-item').forEach(x=>{x.classList.remove('open');x.querySelector('.faq-answer').style.maxHeight='0'});if(!o){i.classList.add('open');a.style.maxHeight=a.scrollHeight+'px'}}
-
-// FORM
-function handleSubmit(e){e.preventDefault();const b=e.target.querySelector('.btn-submit'),t=b.textContent;b.textContent='✓ Sent!';b.style.background='linear-gradient(135deg,#22c55e,#16a34a)';setTimeout(()=>{b.textContent=t;b.style.background='';e.target.reset()},3000)}
-
-// WHATSAPP
-function openWhatsApp(t){window.open(`https://wa.me/1234567890?text=${encodeURIComponent('Hi NEXORA! I want the '+t+' template. Details?')}`,'_blank')}
-
-// SMOOTH SCROLL
-document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){const id=this.getAttribute('href');if(id==='#')return;e.preventDefault();const el=document.querySelector(id);if(el)window.scrollTo({top:el.offsetTop-80,behavior:'smooth'})})});
-
-// ==========================================
-// SECRET PAGE - FIXED VERSION
-// ==========================================
-
-const PROMPTS_DATA = [
-{id:'restaurant',icon:'🍽️',name:'Restaurant & Food',pkg:'Business — $59',color:'251,146,60',prompt:`Build a complete, single-file HTML restaurant website with:
-
-BUSINESS NAME: [BUSINESS NAME]
-PHONE/WHATSAPP: [PHONE NUMBER]
-LOGO: [LOGO URL]
-
-DESIGN: Dark premium theme, warm orange accents (#f97316), mobile-first, smooth animations, fixed nav with WhatsApp CTA.
-
-SECTIONS:
-1. Hero: Full-screen, restaurant name, tagline, "Order Now" WhatsApp button
-2. About: Story, founding year, specialty
-3. Menu: Grid of 6-9 items with emoji, name, description, price, WhatsApp order buttons
-4. Gallery: CSS-styled image placeholders
-5. Testimonials: 3 reviews with stars
-6. Location: Google Maps placeholder, address, hours
-7. Contact: WhatsApp, phone, socials
-8. Footer: Logo, links, copyright
-
-FEATURES: WhatsApp pre-filled "Hi [NAME]! I'd like to order:", 3D hover tilt, floating WhatsApp button, animated counters, mobile hamburger menu, loading animation.
-
-OUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only.`},
-
-{id:'ecommerce',icon:'🛒',name:'E-Commerce Store',pkg:'Premium — $99',color:'99,102,241',prompt:`Build a complete, single-file HTML e-commerce website with:
-
-BUSINESS NAME: [BUSINESS NAME]
-PHONE/WHATSAPP: [PHONE NUMBER]
-LOGO: [LOGO URL]
-
-DESIGN: Dark modern theme, indigo accents (#6366f1), premium product cards, mobile-first grid.
-
-SECTIONS:
-1. Nav: Logo, search, cart icon, WhatsApp CTA
-2. Hero: Animated gradient, featured collection, shop now
-3. Category Filters: JavaScript filter buttons
-4. Products: 9-12 cards with emoji, name, desc, price, WhatsApp "Buy Now"
-5. Features: Free shipping, secure, returns, support
-6. Best Sellers: 3 highlighted products
-7. Testimonials, Newsletter, Footer
-
-FEATURES: Category filter with animation, WhatsApp "Hi! I want to order: [Product] - [Price]", 3D hover tilt, search filter, mobile responsive.
-
-OUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only.`},
-
-{id:'agency',icon:'💼',name:'Digital Agency',pkg:'Business — $59',color:'6,182,212',prompt:`Build a complete, single-file HTML agency website with:
-
-BUSINESS NAME: [BUSINESS NAME]
-PHONE/WHATSAPP: [PHONE NUMBER]
-LOGO: [LOGO URL]
-
-DESIGN: Ultra-dark (#050507), indigo/violet accents, animated grid background, glassmorphism, Space Grotesk + Inter fonts.
-
-SECTIONS:
-1. Glassmorphism navbar with "Start Project" CTA
-2. Cinematic hero: gradient text animation, floating metric cards
-3. Services: 6 cards with hover glow
-4. Portfolio: 4 project showcases with mockups
-5. Process: 5-step timeline
-6. Stats: Animated counters
-7. Testimonials: 3 glassmorphism cards
-8. Pricing: 3 tiers
-9. Contact form with WhatsApp fallback
-10. Footer
-
-FEATURES: Scroll reveal, custom cursor, counter animations, mobile hamburger, WhatsApp float, smooth scroll.
-
-OUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only.`},
-
-{id:'portfolio',icon:'🎭',name:'Personal Portfolio',pkg:'Basic — $29',color:'168,85,247',prompt:`Build a complete, single-file HTML portfolio website with:
-
-OWNER NAME: [BUSINESS NAME]
-PHONE/WHATSAPP: [PHONE NUMBER]
-PHOTO/LOGO: [LOGO URL]
-PROFESSION: [e.g. Designer / Developer / Photographer]
-
-DESIGN: Minimalist dark theme, clean typography, smooth scroll animations, grid portfolio.
-
-SECTIONS:
-1. Nav: Name, links, hire me button
-2. Hero: Name, typing animation for profession, bio, CV + contact buttons
-3. About: Story, experience
-4. Skills: Tags with proficiency
-5. Portfolio: 6-9 project cards with category filter
-6. Testimonials: 3 reviews
-7. Contact: WhatsApp, email, form
-8. Footer
-
-FEATURES: Typing animation, portfolio category filter (JS), scroll reveal, WhatsApp "Hire Me", mobile responsive.
-
-OUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only.`},
-
-{id:'medical',icon:'🏥',name:'Medical & Healthcare',pkg:'Business — $59',color:'6,182,212',prompt:`Build a complete, single-file HTML medical clinic website with:
-
-CLINIC NAME: [BUSINESS NAME]
-PHONE/WHATSAPP: [PHONE NUMBER]
-LOGO: [LOGO URL]
-
-DESIGN: Dark-navy theme, cyan accents (#06b6d4), trust-inspiring, clean.
-
-SECTIONS:
-1. Nav: Logo, emergency call, appointment WhatsApp button
-2. Hero: Clinic name, tagline, book appointment CTA, emergency number
-3. Services: 6 medical services with WhatsApp booking
-4. About: Story, mission
-5. Doctors: 3 profile cards
-6. Trust badges: Certified, Modern Equipment, 24/7, Affordable
-7. Stats: Animated counters
-8. Testimonials: 3 reviews
-9. Appointment: WhatsApp booking form
-10. Location & Hours
-11. Footer with emergency number
-
-FEATURES: Emergency number prominent, WhatsApp appointment booking, scroll animations, floating WhatsApp + phone buttons, mobile responsive.
-
-OUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only.`},
-
-{id:'realestate',icon:'🏠',name:'Real Estate',pkg:'Premium — $99',color:'251,191,36',prompt:`Build a complete, single-file HTML real estate website with:
-
-AGENCY NAME: [BUSINESS NAME]
-PHONE/WHATSAPP: [PHONE NUMBER]
-LOGO: [LOGO URL]
-CITY: [Location]
-
-DESIGN: Luxury dark theme, gold accents (#f59e0b), premium property cards.
-
-SECTIONS:
-1. Nav: Logo, call + WhatsApp buttons
-2. Hero: "Find Your Dream Property", search with type/location/price dropdowns
-3. Properties: 6 cards with type badge, price, bedrooms/bathrooms, WhatsApp inquiry
-4. Categories: Buy, Rent, Commercial, Land
-5. Why Choose Us, Stats, How It Works
-6. Agent profiles with WhatsApp
-7. Testimonials, Valuation form, Footer
-
-FEATURES: Property filter (Buy/Rent), WhatsApp "I'm interested in [Property] in [Location]", JS filters, scroll animations, mobile responsive.
-
-OUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only.`},
-
-{id:'fitness',icon:'💪',name:'Gym & Fitness',pkg:'Business — $59',color:'239,68,68',prompt:`Build a complete, single-file HTML gym website with:
-
-GYM NAME: [BUSINESS NAME]
-PHONE/WHATSAPP: [PHONE NUMBER]
-LOGO: [LOGO URL]
-
-DESIGN: Dark theme, red accents (#ef4444), bold typography, energetic animations.
-
-SECTIONS:
-1. Nav with "Join Now" CTA
-2. Hero: Bold headline, join + tour buttons
-3. Programs: 6 cards (Weights, Cardio, CrossFit, Yoga, PT, Nutrition)
-4. Membership: 3 pricing cards, WhatsApp join
-5. Trainers: 3 profiles
-6. Class Schedule: Weekly timetable with day tabs
-7. Stats, Contact & Location, Footer
-
-FEATURES: WhatsApp "I want to join [GYM], interested in [Plan]", class schedule tabs, membership toggle, scroll animations, mobile responsive.
-
-OUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only.`},
-
-{id:'saas',icon:'⚡',name:'SaaS Platform',pkg:'Premium — $99',color:'99,102,241',prompt:`Build a complete, single-file HTML SaaS landing page with:
-
-PRODUCT NAME: [BUSINESS NAME]
-PHONE/WHATSAPP: [PHONE NUMBER]
-LOGO: [LOGO URL]
-TAGLINE: [One-line description]
-
-DESIGN: Ultra-premium dark (#050507), indigo/violet/cyan gradients, glassmorphism, animated grid, CSS dashboard mockup, Apple/Stripe quality.
-
-SECTIONS:
-1. Nav: Logo, features, pricing, login, "Start Free Trial"
-2. Hero: Animated gradient text, CSS dashboard mockup
-3. Trusted By logos
-4. Features: 6 cards with hover glow
-5. Product demo mockup
-6. How It Works: 3 steps
-7. Pricing: 3 tiers (monthly/annually toggle)
-8. Integrations grid, Stats, Testimonials
-9. FAQ accordion (6 items)
-10. Final CTA with email input, Footer
-
-FEATURES: CSS dashboard mockup, accordion FAQ, pricing toggle, custom cursor, particles, WhatsApp support.
-
-OUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only.`},
-
-{id:'beauty',icon:'💄',name:'Beauty & Salon',pkg:'Business — $59',color:'236,72,153',prompt:`Build a complete, single-file HTML beauty salon website with:
-
-SALON NAME: [BUSINESS NAME]
-PHONE/WHATSAPP: [PHONE NUMBER]
-LOGO: [LOGO URL]
-
-DESIGN: Elegant dark theme, rose/pink accents (#ec4899), luxury feminine aesthetic.
-
-SECTIONS:
-1. Nav with "Book Now" WhatsApp CTA
-2. Hero: Luxurious headline, discount badge, dual CTA
-3. Services: 6-8 (Hair, Nails, Facial, Makeup, etc.) with price, duration, WhatsApp book
-4. About, Gallery with category filters
-5. Specialists: 3 beautician profiles
-6. Trust badges, Pricing menu
-7. Testimonials: 4 reviews
-8. Booking: WhatsApp form, Location & Hours, Footer
-
-FEATURES: WhatsApp "Hi [SALON]! Book: [Service] on [Date]", gallery filter, scroll animations, floating WhatsApp, mobile responsive.
-
-OUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only.`},
-
-{id:'education',icon:'🎓',name:'Education',pkg:'Business — $59',color:'34,197,94',prompt:`Build a complete, single-file HTML education website with:
-
-INSTITUTION: [BUSINESS NAME]
-PHONE/WHATSAPP: [PHONE NUMBER]
-LOGO: [LOGO URL]
-SPECIALIZATION: [e.g. Coding / Languages / University Prep]
-
-DESIGN: Dark theme, green accents (#22c55e), clean academic layout, course cards.
-
-SECTIONS:
-1. Nav: Logo, login, enroll CTA
-2. Hero: "Unlock Your Potential", search bar, stats
-3. Categories: Filter tabs
-4. Courses: 6 cards with badge, name, instructor, level, rating, price, WhatsApp enroll
-5. About, How It Works (Browse → Enroll → Learn → Certify)
-6. Instructors: 3 profiles
-7. Testimonials, FAQ accordion, Contact, Footer
-
-FEATURES: Course category filter (JS), WhatsApp "Enroll in [Course]", scroll reveal, accordion FAQ, mobile responsive.
-
-OUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only.`},
-
-{id:'basic',icon:'🥉',name:'Basic Business',pkg:'Basic — $29',color:'99,102,241',prompt:`Build a simple, single-file HTML business website with:
-
-BUSINESS NAME: [BUSINESS NAME]
-PHONE/WHATSAPP: [PHONE NUMBER]
-LOGO: [LOGO URL]
-BUSINESS TYPE: [e.g. Consulting / Cleaning / Plumber]
-CITY: [Location]
-
-DESIGN: Clean dark theme, professional accent, simple fast-loading, mobile-first.
-
-SECTIONS:
-1. Nav: Logo, 3 links, WhatsApp button
-2. Hero: Name, tagline, WhatsApp CTA, phone
-3. About: 2-3 paragraphs
-4. Services: 3-6 cards
-5. Why Choose Us: 4 points
-6. Contact: WhatsApp, phone, email, hours
-7. Footer
-
-FEATURES: Large WhatsApp button, click-to-call, smooth scroll, mobile responsive, simple hovers. KEEP IT SIMPLE — basic $29 package.
-
-OUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only.`},
-
-{id:'premium',icon:'🥇',name:'Premium AI Website',pkg:'Premium — $99',color:'139,92,246',prompt:`Build a PREMIUM single-file HTML website with AI chatbot for:
-
-BUSINESS NAME: [BUSINESS NAME]
-PHONE/WHATSAPP: [PHONE NUMBER]
-LOGO: [LOGO URL]
-BUSINESS TYPE: [Type]
-
-DESIGN: Apple/Tesla level, ultra-dark (#050507), animated gradient orbs, CSS particles (40+), custom cursor, glassmorphism, 3D transforms, Space Grotesk + Inter, cinematic loading screen.
-
-ADVANCED FEATURES:
-- Custom cursor ring + dot
-- Loading screen with logo animation
-- Animated grid background
-- Floating gradient orbs
-- Particle system
-- Mouse reactive glow
-- AI CHATBOT: Fixed bottom-right chat bubble, glassmorphism window, bot "[NAME] Assistant", pre-programmed responses (Hello, Services, Pricing, Hours, Location, WhatsApp), typing indicator, timestamps, "Connect to WhatsApp" button
-
-SECTIONS:
-1. Cinematic hero with particles and floating cards
-2. Services with 3D tilt hover
-3. Portfolio with 3D card effects
-4. Animated stats counters
-5. Auto-rotating testimonials
-6. 3D pricing cards with glow
-7. Accordion FAQ
-8. Premium contact form
-9. Footer with gradient line
-
-OUTPUT: Complete single HTML, ALL CSS/JS inline, award-winning quality. Google Fonts only.`}
+(function(){
+"use strict";
+
+/* === PROMPTS DATA === */
+var PD=[
+{id:'restaurant',ic:'🍽️',nm:'Restaurant & Food',pk:'Business — $59',cl:'251,146,60',pr:"Build a complete, single-file HTML restaurant website with:\n\nBUSINESS NAME: [BUSINESS NAME]\nPHONE/WHATSAPP: [PHONE NUMBER]\nLOGO: [LOGO URL]\n\nDESIGN: Dark premium theme, warm orange accents (#f97316), mobile-first, smooth animations, fixed nav with WhatsApp CTA.\n\nSECTIONS:\n1. Hero: Full-screen, restaurant name, tagline, \"Order Now\" WhatsApp button\n2. About: Story, founding year, specialty\n3. Menu: Grid of 6-9 items with emoji, name, description, price, WhatsApp order buttons\n4. Gallery: CSS-styled image placeholders\n5. Testimonials: 3 reviews with stars\n6. Location: Google Maps placeholder, address, hours\n7. Contact: WhatsApp, phone, socials\n8. Footer: Logo, links, copyright\n\nFEATURES: WhatsApp pre-filled message, 3D hover tilt, floating WhatsApp button, animated counters, mobile hamburger menu, loading animation.\n\nOUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only."},
+{id:'ecommerce',ic:'🛒',nm:'E-Commerce Store',pk:'Premium — $99',cl:'99,102,241',pr:"Build a complete, single-file HTML e-commerce website with:\n\nBUSINESS NAME: [BUSINESS NAME]\nPHONE/WHATSAPP: [PHONE NUMBER]\nLOGO: [LOGO URL]\n\nDESIGN: Dark modern theme, indigo accents (#6366f1), premium product cards, mobile-first grid.\n\nSECTIONS:\n1. Nav: Logo, search, cart icon, WhatsApp CTA\n2. Hero: Animated gradient, featured collection, shop now\n3. Category Filters: JavaScript filter buttons\n4. Products: 9-12 cards with emoji, name, desc, price, WhatsApp \"Buy Now\"\n5. Features: Free shipping, secure, returns, support\n6. Best Sellers: 3 highlighted products\n7. Testimonials, Newsletter, Footer\n\nFEATURES: Category filter with animation, WhatsApp order, 3D hover tilt, search filter, mobile responsive.\n\nOUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only."},
+{id:'agency',ic:'💼',nm:'Digital Agency',pk:'Business — $59',cl:'6,182,212',pr:"Build a complete, single-file HTML agency website with:\n\nBUSINESS NAME: [BUSINESS NAME]\nPHONE/WHATSAPP: [PHONE NUMBER]\nLOGO: [LOGO URL]\n\nDESIGN: Ultra-dark (#050507), indigo/violet accents, animated grid, glassmorphism, Space Grotesk + Inter fonts.\n\nSECTIONS:\n1. Glassmorphism navbar, \"Start Project\" CTA\n2. Cinematic hero: gradient text, floating metric cards\n3. Services: 6 cards with hover glow\n4. Portfolio: 4 project showcases\n5. Process: 5-step timeline\n6. Stats: Animated counters\n7. Testimonials, Pricing (3 tiers)\n8. Contact form with WhatsApp fallback\n9. Footer\n\nFEATURES: Scroll reveal, custom cursor, counters, mobile hamburger, WhatsApp float.\n\nOUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only."},
+{id:'portfolio',ic:'🎭',nm:'Personal Portfolio',pk:'Basic — $29',cl:'168,85,247',pr:"Build a complete, single-file HTML portfolio website with:\n\nOWNER NAME: [BUSINESS NAME]\nPHONE/WHATSAPP: [PHONE NUMBER]\nPHOTO/LOGO: [LOGO URL]\nPROFESSION: [e.g. Designer / Developer / Photographer]\n\nDESIGN: Minimalist dark theme, clean typography, smooth scroll animations.\n\nSECTIONS:\n1. Nav: Name, links, hire me button\n2. Hero: Name, typing animation, bio, CV + contact buttons\n3. About, Skills, Portfolio Grid (6-9 cards with category filter)\n4. Testimonials, Contact (WhatsApp, email, form)\n5. Footer\n\nFEATURES: Typing animation, portfolio category filter (JS), scroll reveal, WhatsApp \"Hire Me\", mobile responsive.\n\nOUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only."},
+{id:'medical',ic:'🏥',nm:'Medical & Healthcare',pk:'Business — $59',cl:'6,182,212',pr:"Build a complete, single-file HTML medical clinic website with:\n\nCLINIC NAME: [BUSINESS NAME]\nPHONE/WHATSAPP: [PHONE NUMBER]\nLOGO: [LOGO URL]\n\nDESIGN: Dark-navy theme, cyan accents (#06b6d4), trust-inspiring.\n\nSECTIONS:\n1. Nav: Logo, emergency call, appointment WhatsApp\n2. Hero: Clinic name, tagline, book appointment, emergency number\n3. Services: 6 medical services with WhatsApp booking\n4. About, Doctors (3 profiles), Trust badges\n5. Stats, Testimonials, Appointment booking\n6. Location & Hours, Footer\n\nFEATURES: Emergency number prominent, WhatsApp booking, scroll animations, floating buttons, mobile responsive.\n\nOUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only."},
+{id:'realestate',ic:'🏠',nm:'Real Estate',pk:'Premium — $99',cl:'251,191,36',pr:"Build a complete, single-file HTML real estate website with:\n\nAGENCY NAME: [BUSINESS NAME]\nPHONE/WHATSAPP: [PHONE NUMBER]\nLOGO: [LOGO URL]\nCITY: [Location]\n\nDESIGN: Luxury dark theme, gold accents (#f59e0b), premium property cards.\n\nSECTIONS:\n1. Nav: Logo, call + WhatsApp\n2. Hero: \"Find Your Dream Property\", search with dropdowns\n3. Properties: 6 cards with type, price, bedrooms, WhatsApp inquiry\n4. Categories, Why Choose Us, Stats, How It Works\n5. Agent profiles, Testimonials, Valuation form, Footer\n\nFEATURES: Property filter (Buy/Rent), WhatsApp inquiry, JS filters, scroll animations, mobile responsive.\n\nOUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only."},
+{id:'fitness',ic:'💪',nm:'Gym & Fitness',pk:'Business — $59',cl:'239,68,68',pr:"Build a complete, single-file HTML gym website with:\n\nGYM NAME: [BUSINESS NAME]\nPHONE/WHATSAPP: [PHONE NUMBER]\nLOGO: [LOGO URL]\n\nDESIGN: Dark theme, red accents (#ef4444), bold typography, energetic.\n\nSECTIONS:\n1. Nav with \"Join Now\" CTA\n2. Hero: Bold headline, join + tour buttons\n3. Programs: 6 cards\n4. Membership: 3 pricing cards, WhatsApp join\n5. Trainers, Class Schedule (weekly tabs)\n6. Stats, Contact, Footer\n\nFEATURES: WhatsApp join, class schedule tabs, membership toggle, scroll animations, mobile responsive.\n\nOUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only."},
+{id:'saas',ic:'⚡',nm:'SaaS Platform',pk:'Premium — $99',cl:'99,102,241',pr:"Build a complete, single-file HTML SaaS landing page with:\n\nPRODUCT NAME: [BUSINESS NAME]\nPHONE/WHATSAPP: [PHONE NUMBER]\nLOGO: [LOGO URL]\nTAGLINE: [One-line description]\n\nDESIGN: Ultra-premium dark (#050507), indigo/violet/cyan gradients, glassmorphism, CSS dashboard mockup, Apple/Stripe quality.\n\nSECTIONS:\n1. Nav: Logo, features, pricing, login, \"Start Free Trial\"\n2. Hero: Animated gradient text, CSS dashboard mockup\n3. Trusted By, Features (6 cards), Product demo\n4. How It Works, Pricing (3 tiers with toggle)\n5. Stats, Testimonials, FAQ accordion (6 items)\n6. Final CTA, Footer\n\nFEATURES: CSS dashboard mockup, accordion FAQ, pricing toggle, custom cursor, particles, WhatsApp support.\n\nOUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only."},
+{id:'beauty',ic:'💄',nm:'Beauty & Salon',pk:'Business — $59',cl:'236,72,153',pr:"Build a complete, single-file HTML beauty salon website with:\n\nSALON NAME: [BUSINESS NAME]\nPHONE/WHATSAPP: [PHONE NUMBER]\nLOGO: [LOGO URL]\n\nDESIGN: Elegant dark theme, rose/pink accents (#ec4899), luxury feminine aesthetic.\n\nSECTIONS:\n1. Nav with \"Book Now\" WhatsApp CTA\n2. Hero: Luxurious headline, discount badge\n3. Services: 6-8 with price, duration, WhatsApp book\n4. About, Gallery with category filters\n5. Specialists, Trust badges, Pricing menu\n6. Testimonials, Booking form, Location, Footer\n\nFEATURES: WhatsApp booking, gallery filter, scroll animations, floating WhatsApp, mobile responsive.\n\nOUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only."},
+{id:'education',ic:'🎓',nm:'Education',pk:'Business — $59',cl:'34,197,94',pr:"Build a complete, single-file HTML education website with:\n\nINSTITUTION: [BUSINESS NAME]\nPHONE/WHATSAPP: [PHONE NUMBER]\nLOGO: [LOGO URL]\nSPECIALIZATION: [e.g. Coding / Languages]\n\nDESIGN: Dark theme, green accents (#22c55e), clean academic layout.\n\nSECTIONS:\n1. Nav: Logo, login, enroll CTA\n2. Hero: \"Unlock Your Potential\", search, stats\n3. Categories filter tabs, Courses (6 cards)\n4. About, How It Works, Instructors (3 profiles)\n5. Testimonials, FAQ accordion, Contact, Footer\n\nFEATURES: Course filter (JS), WhatsApp enrollment, scroll reveal, accordion FAQ, mobile responsive.\n\nOUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only."},
+{id:'basic',ic:'🥉',nm:'Basic Business',pk:'Basic — $29',cl:'99,102,241',pr:"Build a simple, single-file HTML business website with:\n\nBUSINESS NAME: [BUSINESS NAME]\nPHONE/WHATSAPP: [PHONE NUMBER]\nLOGO: [LOGO URL]\nBUSINESS TYPE: [e.g. Consulting / Cleaning / Plumber]\nCITY: [Location]\n\nDESIGN: Clean dark theme, professional, simple, fast-loading, mobile-first.\n\nSECTIONS:\n1. Nav: Logo, 3 links, WhatsApp button\n2. Hero: Name, tagline, WhatsApp CTA, phone\n3. About: 2-3 paragraphs\n4. Services: 3-6 cards\n5. Why Choose Us: 4 points\n6. Contact: WhatsApp, phone, email, hours\n7. Footer\n\nFEATURES: Large WhatsApp button, click-to-call, smooth scroll, mobile responsive. KEEP IT SIMPLE.\n\nOUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only."},
+{id:'premium',ic:'🥇',nm:'Premium AI Website',pk:'Premium — $99',cl:'139,92,246',pr:"Build a PREMIUM single-file HTML website with AI chatbot for:\n\nBUSINESS NAME: [BUSINESS NAME]\nPHONE/WHATSAPP: [PHONE NUMBER]\nLOGO: [LOGO URL]\nBUSINESS TYPE: [Type]\n\nDESIGN: Apple/Tesla level, ultra-dark (#050507), animated gradient orbs, CSS particles (40+), custom cursor, glassmorphism, 3D transforms, Space Grotesk + Inter, cinematic loading screen.\n\nADVANCED FEATURES:\n- Custom cursor ring + dot\n- Loading screen with logo\n- Animated grid background\n- Floating gradient orbs\n- Particle system\n- Mouse reactive glow\n- AI CHATBOT: Fixed bottom-right chat bubble, glassmorphism window, pre-programmed responses (Hello, Services, Pricing, Hours, Location, WhatsApp), typing indicator, timestamps, \"Connect to WhatsApp\" button\n\nSECTIONS:\n1. Cinematic hero with particles and floating cards\n2. Services with 3D tilt\n3. Portfolio with 3D cards\n4. Animated stats\n5. Testimonials carousel\n6. 3D pricing cards\n7. Accordion FAQ\n8. Premium contact form\n9. Footer with gradient line\n\nOUTPUT: Complete single HTML, ALL CSS/JS inline, award-winning quality. Google Fonts only."}
 ];
 
-// KEY SEQUENCE DETECTION
-let keyBuffer = [];
-document.addEventListener('keydown', function(e) {
-    keyBuffer.push(e.key.toLowerCase());
-    if (keyBuffer.length > 3) keyBuffer.shift();
-    
-    if (keyBuffer[0] === '1' && keyBuffer[1] === '9' && keyBuffer[2] === 'n') {
-        keyBuffer = [];
-        showSecretPanel();
-    }
+/* === LOADER === */
+window.addEventListener('load',function(){
+  setTimeout(function(){document.getElementById('loader').classList.add('done')},2200);
 });
 
-function showSecretPanel() {
-    const overlay = document.getElementById('secretOverlay');
-    overlay.className = 'show-secret';
-    document.body.style.overflow = 'hidden';
-    document.getElementById('passwordScreen').style.display = 'block';
-    document.getElementById('adminPanel').style.display = 'none';
-    
-    setTimeout(function() {
-        document.getElementById('passwordInput').focus();
-    }, 200);
+/* === CURSOR === */
+var curEl=document.getElementById('cur');
+var dotE=document.getElementById('dotEl');
+var glwE=document.getElementById('glowEl');
+var mx=0,my=0,cx=0,cy=0;
+
+document.addEventListener('mousemove',function(e){
+  mx=e.clientX;my=e.clientY;
+  dotE.style.left=mx+'px';dotE.style.top=my+'px';
+  glwE.style.left=mx+'px';glwE.style.top=my+'px';
+});
+
+(function aCur(){
+  cx+=(mx-cx)*0.12;cy+=(my-cy)*0.12;
+  curEl.style.left=cx+'px';curEl.style.top=cy+'px';
+  requestAnimationFrame(aCur);
+})();
+
+/* === PARTICLES === */
+var pCon=document.getElementById('parts');
+for(var i=0;i<35;i++){
+  var p=document.createElement('div');p.className='pt';
+  p.style.left=Math.random()*100+'%';
+  p.style.animationDuration=(8+Math.random()*12)+'s';
+  p.style.animationDelay=Math.random()*10+'s';
+  var sz=(1+Math.random()*2)+'px';p.style.width=sz;p.style.height=sz;
+  pCon.appendChild(p);
 }
 
-function checkPassword() {
-    const pwd = document.getElementById('passwordInput').value;
-    if (pwd === 'nasrallah20111') {
-        document.getElementById('passwordScreen').style.display = 'none';
-        document.getElementById('adminPanel').style.display = 'block';
-        document.getElementById('secretOverlay').className = 'show-admin';
-        document.getElementById('passwordError').style.display = 'none';
-        buildAllPrompts();
-    } else {
-        document.getElementById('passwordError').style.display = 'block';
-        document.getElementById('passwordInput').value = '';
-        document.getElementById('passwordInput').style.borderColor = '#ef4444';
-        setTimeout(function() {
-            document.getElementById('passwordInput').style.borderColor = 'rgba(255,255,255,.1)';
-        }, 1500);
+/* === NAV === */
+var navEl=document.getElementById('nav');
+window.addEventListener('scroll',function(){navEl.classList.toggle('scrolled',window.scrollY>50)});
+document.getElementById('mobTog').addEventListener('click',function(){
+  document.getElementById('navLinks').classList.toggle('mob-open');
+});
+document.querySelectorAll('.nav-links a').forEach(function(l){
+  l.addEventListener('click',function(){document.getElementById('navLinks').classList.remove('mob-open')});
+});
+
+/* === REVEAL === */
+var rObs=new IntersectionObserver(function(entries){
+  entries.forEach(function(en){if(en.isIntersecting)en.target.classList.add('vis')});
+},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv,.tl-item').forEach(function(el){rObs.observe(el)});
+
+/* === COUNTERS === */
+var cObs=new IntersectionObserver(function(entries){
+  entries.forEach(function(en){
+    if(en.isIntersecting){
+      var t=parseInt(en.target.getAttribute('data-t'));
+      aCount(en.target,t);cObs.unobserve(en.target);
     }
+  });
+},{threshold:0.5});
+document.querySelectorAll('.stat-n[data-t]').forEach(function(el){cObs.observe(el)});
+
+function aCount(el,t){
+  var c=0,inc=t/60;
+  var s=t===98?'%':'+';
+  (function u(){
+    c+=inc;
+    if(c>=t){el.textContent=t+s;return;}
+    el.textContent=Math.floor(c)+s;
+    requestAnimationFrame(u);
+  })();
 }
 
-function closeSecret() {
-    document.getElementById('secretOverlay').className = '';
-    document.getElementById('secretOverlay').style.display = 'none';
-    document.getElementById('passwordInput').value = '';
-    document.getElementById('passwordError').style.display = 'none';
-    document.body.style.overflow = '';
-}
-
-function buildAllPrompts() {
-    const container = document.getElementById('promptsContainer');
-    if (container.children.length > 0) return; // already built
-    
-    PROMPTS_DATA.forEach(function(p) {
-        const card = document.createElement('div');
-        card.className = 'prompt-card';
-        
-        card.innerHTML = '<div class="prompt-card-header" style="background:linear-gradient(135deg,rgba('+p.color+',.12),rgba('+p.color+',.04))">' +
-            '<div class="prompt-card-icon" style="background:rgba('+p.color+',.15)">'+p.icon+'</div>' +
-            '<div class="prompt-card-info"><div class="prompt-card-name">'+p.name+'</div><div class="prompt-card-pkg">'+p.pkg+'</div></div>' +
-            '<button class="prompt-copy-btn" onclick="copyPromptText(\''+p.id+'\')">Copy Prompt</button>' +
-            '</div>' +
-            '<div class="prompt-card-body">' +
-            '<textarea id="prompt-'+p.id+'" class="prompt-textarea" readonly>'+p.prompt+'</textarea>' +
-            '</div>';
-        
-        container.appendChild(card);
+/* === TEMPLATE FILTER === */
+document.querySelectorAll('.tpl-tab').forEach(function(tab){
+  tab.addEventListener('click',function(){
+    document.querySelectorAll('.tpl-tab').forEach(function(t){t.classList.remove('active')});
+    tab.classList.add('active');
+    var f=tab.getAttribute('data-f');
+    document.querySelectorAll('.tpl-card').forEach(function(c){
+      if(f==='all'||c.getAttribute('data-cat')===f){
+        c.classList.add('vis');
+      }else{
+        c.classList.remove('vis');
+      }
     });
-}
-
-function copyPromptText(id) {
-    const textarea = document.getElementById('prompt-' + id);
-    if (!textarea) return;
-    
-    const text = textarea.value;
-    
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(function() {
-            showCopyToast();
-        }).catch(function() {
-            fallbackCopy(textarea);
-        });
-    } else {
-        fallbackCopy(textarea);
-    }
-}
-
-function fallbackCopy(textarea) {
-    textarea.select();
-    textarea.setSelectionRange(0, 999999);
-    try {
-        document.execCommand('copy');
-        showCopyToast();
-    } catch(e) {
-        alert('Please manually copy the text (Ctrl+C)');
-    }
-}
-
-function showCopyToast() {
-    const toast = document.getElementById('copyToast');
-    toast.classList.add('show-toast');
-    setTimeout(function() {
-        toast.classList.remove('show-toast');
-    }, 2500);
-}
-
-// Password input focus styling
-document.getElementById('passwordInput').addEventListener('focus', function() {
-    this.style.borderColor = 'rgba(99,102,241,.6)';
-    this.style.boxShadow = '0 0 0 3px rgba(99,102,241,.15)';
+  });
 });
-document.getElementById('passwordInput').addEventListener('blur', function() {
-    this.style.borderColor = 'rgba(255,255,255,.1)';
-    this.style.boxShadow = 'none';
+
+/* === TEMPLATE 3D TILT === */
+document.querySelectorAll('.tpl-card').forEach(function(c){
+  c.addEventListener('mousemove',function(e){
+    var r=c.getBoundingClientRect();
+    var rx=(e.clientY-r.top-r.height/2)/(r.height/2)*-5;
+    var ry=(e.clientX-r.left-r.width/2)/(r.width/2)*5;
+    c.style.transform='perspective(1000px) rotateX('+rx+'deg) rotateY('+ry+'deg) translateY(-8px)';
+  });
+  c.addEventListener('mouseleave',function(){c.style.transform='';});
 });
+
+/* === FAQ === */
+window.togFaq=function(btn){
+  var item=btn.parentElement;
+  var ans=item.querySelector('.faq-a');
+  var isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-i').forEach(function(x){
+    x.classList.remove('open');
+    x.querySelector('.faq-a').style.maxHeight='0';
+  });
+  if(!isOpen){
+    item.classList.add('open');
+    ans.style.maxHeight=ans.scrollHeight+'px';
+  }
+};
+
+/* === FORM === */
+window.subForm=function(e){
+  e.preventDefault();
+  var btn=e.target.querySelector('.btn-sub');
+  var orig=btn.textContent;
+  btn.textContent='✓ Sent! We\'ll reply within 24h';
+  btn.style.background='linear-gradient(135deg,#22c55e,#16a34a)';
+  setTimeout(function(){btn.textContent=orig;btn.style.background='';e.target.reset();},3500);
+};
+
+/* === WHATSAPP === */
+window.waOrder=function(t){
+  window.open('https://wa.me/1234567890?text='+encodeURIComponent('Hi NEXORA! I want the '+t+' template. Can you share details?'),'_blank');
+};
+
+/* === SMOOTH SCROLL === */
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var href=this.getAttribute('href');
+    if(href==='#')return;
+    e.preventDefault();
+    var el=document.querySelector(href);
+    if(el)window.scrollTo({top:el.offsetTop-80,behavior:'smooth'});
+  });
+});
+
+/* ============================================
+   SECRET ADMIN PANEL
+   Press 1 → 9 → n to open
+   Password: nasrallah20111
+   ============================================ */
+
+var keyBuf=[];
+var secOv=document.getElementById('secOv');
+var pwScreen=document.getElementById('pwScreen');
+var adminPanel=document.getElementById('adminPanel');
+var pwInp=document.getElementById('pwInp');
+var pwErr=document.getElementById('pwErr');
+var promptsBuilt=false;
+
+document.addEventListener('keydown',function(e){
+  keyBuf.push(e.key.toLowerCase());
+  if(keyBuf.length>3)keyBuf.shift();
+  if(keyBuf.length===3 && keyBuf[0]==='1' && keyBuf[1]==='9' && keyBuf[2]==='n'){
+    keyBuf=[];
+    openSec();
+  }
+});
+
+function openSec(){
+  secOv.className='showPw';
+  secOv.style.display='flex';
+  pwScreen.style.display='block';
+  adminPanel.style.display='none';
+  document.body.style.overflow='hidden';
+  setTimeout(function(){pwInp.focus();},200);
+}
+
+window.checkPw=function(){
+  if(pwInp.value==='nasrallah20111'){
+    pwScreen.style.display='none';
+    adminPanel.style.display='block';
+    secOv.className='showAdmin';
+    secOv.style.display='block';
+    pwErr.style.display='none';
+    pwInp.value='';
+    if(!promptsBuilt)buildPrompts();
+  }else{
+    pwErr.style.display='block';
+    pwInp.value='';
+    pwInp.style.borderColor='#ef4444';
+    setTimeout(function(){pwInp.style.borderColor='rgba(255,255,255,.1)';},1500);
+  }
+};
+
+pwInp.addEventListener('keydown',function(e){
+  if(e.key==='Enter')window.checkPw();
+});
+
+pwInp.addEventListener('focus',function(){
+  this.style.borderColor='rgba(99,102,241,.6)';
+  this.style.boxShadow='0 0 0 3px rgba(99,102,241,.15)';
+});
+pwInp.addEventListener('blur',function(){
+  this.style.borderColor='rgba(255,255,255,.1)';
+  this.style.boxShadow='none';
+});
+
+window.closeSec=function(){
+  secOv.className='';
+  secOv.style.display='none';
+  pwInp.value='';
+  pwErr.style.display='none';
+  document.body.style.overflow='';
+};
+
+function buildPrompts(){
+  promptsBuilt=true;
+  var box=document.getElementById('promptsBox');
+  PD.forEach(function(p){
+    var card=document.createElement('div');
+    card.className='p-card';
+    var h='<div class="p-head" style="background:linear-gradient(135deg,rgba('+p.cl+',.12),rgba('+p.cl+',.04))">';
+    h+='<div class="p-icon" style="background:rgba('+p.cl+',.15)">'+p.ic+'</div>';
+    h+='<div style="flex:1;min-width:0"><div class="p-name">'+p.nm+'</div><div class="p-pkg">'+p.pk+'</div></div>';
+    h+='<button class="p-copy" onclick="copyPr(\''+p.id+'\')">Copy Prompt</button>';
+    h+='</div>';
+    h+='<div class="p-body"><textarea id="pr-'+p.id+'" class="p-ta" readonly>'+p.pr+'</textarea></div>';
+    card.innerHTML=h;
+    box.appendChild(card);
+  });
+}
+
+window.copyPr=function(id){
+  var ta=document.getElementById('pr-'+id);
+  if(!ta)return;
+  var txt=ta.value;
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(showCpToast).catch(function(){fbCopy(ta)});
+  }else{
+    fbCopy(ta);
+  }
+};
+
+function fbCopy(ta){
+  ta.select();ta.setSelectionRange(0,999999);
+  try{document.execCommand('copy');showCpToast();}
+  catch(e){alert('Please copy manually (Ctrl+C)');}
+}
+
+function showCpToast(){
+  var t=document.getElementById('cpToast');
+  t.classList.add('show');
+  setTimeout(function(){t.classList.remove('show');},2500);
+}
+
+})();
 </script>
 </body>
 </html>
